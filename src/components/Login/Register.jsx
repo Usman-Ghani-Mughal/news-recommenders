@@ -47,7 +47,7 @@ export class Register extends React.Component {
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" placeholder="email" value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/>
+              <input type="email" name="email" placeholder="email" value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/>
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>

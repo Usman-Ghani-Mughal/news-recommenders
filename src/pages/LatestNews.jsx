@@ -36,7 +36,7 @@ function LatestNews(props) {
         // store data in local
         localStorage.setItem("latest_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
-        console.log("======== ok =========");
+        console.log("========= got data ==========");
 
       }
     }) 
@@ -64,7 +64,7 @@ function LatestNews(props) {
     
   },[]);
 
-  setInterval(getLatestNews, 100000000);
+  setInterval(getLatestNews, 36666666);
 
   if(didgetNews){
     return(

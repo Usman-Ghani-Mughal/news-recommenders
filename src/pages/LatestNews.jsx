@@ -49,15 +49,16 @@ function LatestNews(props) {
   useEffect(  () => {
 
     let latestnews_t = localStorage.getItem("latest_news");
+
     if(latestnews_t){
       latestnews_t = JSON.parse(latestnews_t);
       console.log(latestnews_t);
       setNewsArray(latestnews_t);
       // chnageDidGetNews(true);
-      console.log("Use Effect if");
+      console.log("Use Effect if block");
     }
     else{
-      console.log("Use Effect else");
+      console.log("Use Effect else block");
       getLatestNews();
     }
     

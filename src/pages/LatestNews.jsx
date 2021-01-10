@@ -65,7 +65,7 @@ function LatestNews(props) {
     
   },[]);
 
-  setInterval(getLatestNews, 3000);
+  setInterval(getLatestNews, 36666666);
 
   if(didgetNews){
     return(

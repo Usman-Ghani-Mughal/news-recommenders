@@ -105,7 +105,7 @@ function Home(props) {
             </div>
 
             <div className="row w-100 h-25">
-              <Carousel className="single_news_container hvr-grow-shadow" breakPoints={breakPoints}>
+              <Carousel className="single_news_container hvr-wobble-skew" breakPoints={breakPoints}>
                 {i0array.map( (news, index) => (
                   <Card  key={news._id} news={news} number_cols={number_cols} ></Card>
                 ) )}
@@ -128,7 +128,7 @@ function Home(props) {
             </div>
 
             <div className="row w-100 h-25">
-              <Carousel className="single_news_container hvr-grow-shadow" breakPoints={breakPoints}>
+              <Carousel className="single_news_container hvr-wobble-skew" breakPoints={breakPoints}>
                 {i1array.map( (news, index) => (
                      <Card key={news._id} news={news} number_cols={number_cols} ></Card>
                 ) )}
@@ -149,7 +149,7 @@ function Home(props) {
               </div>
             </div>
             <div className="row w-100 h-25">
-              <Carousel className="single_news_container hvr-grow-shadow" breakPoints={breakPoints}>
+              <Carousel className="single_news_container hvr-wobble-skew" breakPoints={breakPoints}>
                 {i2array.map( (news, index) => (
                   <Card key={news._id} news={news} number_cols={number_cols} ></Card>
                 ) )}

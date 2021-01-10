@@ -3,6 +3,7 @@ import "../../componentscss/logincomponent.scss";
 import { Login, Register } from "../Login/index";
 
 
+
 class LoginComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -39,7 +40,7 @@ class LoginComponent extends React.Component {
         <div className="login">
           <div className="container" ref={ref => (this.container = ref)}>
             {isLogginActive && (
-              <Login containerRef={ref => (this.current = ref)} userInterest_req={this.props.userInterest_req} userLogin={this.props.userLogin}/>
+              <Login containerRef={ref => (this.current = ref)} userInterest_req={this.props.userInterest_req} userLogin={this.props.userLogin} setDataGlobal={this.props.setDataGlobal} changeState={this.changeState} userRegistring={this.props.userRegistring} registeringFromGoogle={this.props.registeringFromGoogle}/>
             )}
             {!isLogginActive && (
               <Register containerRef={ref => (this.current = ref)} setDataGlobal={this.props.setDataGlobal}  changeState={this.changeState} userRegistring={this.props.userRegistring}/>

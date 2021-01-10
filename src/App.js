@@ -47,6 +47,7 @@ import {gotinterests} from './actions/haveinterstAction';
 import {setIntersts} from './actions/userinterstAction';
 import {login} from "./actions/loginAction";
 import {setUserData} from "./actions/userDataAction";
+import {googlelogin} from "./actions/googleLoginAction";
 
 
 
@@ -55,8 +56,6 @@ import {setUserData} from "./actions/userDataAction";
 
 function App()
 {
-
-  
   //localStorage.clear();
   /*
     --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,7 +65,10 @@ function App()
   // make reducers for geting values.
   const wehaveinterst = useSelector(state => state.haveInterestsReducer);
   const userData_req = useSelector(state => state.userDataReducer);
+  const userinterest_req = useSelector(state => state.userInterestsReducer);
   const islogin = useSelector(state => state.loginReducer);
+  const fromGoogle = useSelector(state => state.googleLoginReducer);
+  
 
   // make dispatch object
   const dispatch = useDispatch();
@@ -112,7 +114,7 @@ function App()
    let name = userdata.name;
    let password = userdata.password;
    try {
-    axios({
+   await axios({
       method: 'post',
       url: 'https://damp-brushlands-70035.herokuapp.com/newsapi/user/login',
       data: {
@@ -170,7 +172,7 @@ function App()
   // now we have data, from here we will make request.
   try {
     // making request
-    axios({
+   await axios({
       method: 'post',
       url: 'https://damp-brushlands-70035.herokuapp.com/newsapi/user/register',
       data: {
@@ -201,6 +203,18 @@ function App()
     console.log(err);
     alert(err);
   }
+}
+
+const google_login_register = async () => {
+  let username_req = userData_req.name;
+  let password_req = userData_req.password;
+  const  userdata = {
+    name: username_req,
+    password: password_req,
+  }
+  await registerUsertoDB();
+  console.log(userdata);
+  await userLogin(userdata);
 }
 
 // This function will call when submit button is press.
@@ -253,15 +267,23 @@ const userRegistring = (decision) => {
         reg: decision
       });
    }
-
-const setDataGlobal = (userdata) => {
+// set user information to global states.
+const setDataGlobal = async (userdata) => {
     //  console.log("setglobal state");
     //  console.log(userdata);
       if(userdata){
         // console.log(userdata)
-        dispatch(setUserData(userdata));
+        dispatch(setUserData(userdata) );
       }
+
    }
+
+// set user is registring using goole.
+const registeringFromGoogle =  async (decision) => {
+  console.log("registering from google called");
+  await dispatch(googlelogin(decision));
+  console.log("registering from google called done");
+}
    // ============================================================  ======================================================================   //
    /*
       -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -306,7 +328,7 @@ const setDataGlobal = (userdata) => {
   }else if(userisRegistering.reg){
     return(
       <div className="App"> 
-            <Uiheader cat_selected={category_selected.notselected} interestSubmited={interestSubmited} registerUsertoDB={registerUsertoDB} userRegistring={userRegistring}></Uiheader>
+            <Uiheader cat_selected={category_selected.notselected} interestSubmited={interestSubmited} registerUsertoDB={registerUsertoDB} userRegistring={userRegistring} registeringFromGoogle={registeringFromGoogle} fromGoogle={fromGoogle} google_login_register={google_login_register}></Uiheader>
             <Getuserintersts  addCategories={addCategories} removeCategories={removeCategories} allowSubmit={allowSubmit}></Getuserintersts>
             <Footer categories={categories.UIarray} ></Footer>
       </div>
@@ -314,7 +336,7 @@ const setDataGlobal = (userdata) => {
   }
   else{
       return(
-        <Logincomponent setDataGlobal={setDataGlobal} userRegistring={userRegistring} userLogin={userLogin}></Logincomponent>
+        <Logincomponent setDataGlobal={setDataGlobal} userRegistring={userRegistring} userLogin={userLogin} registeringFromGoogle={registeringFromGoogle} ></Logincomponent>
       )
     }
 

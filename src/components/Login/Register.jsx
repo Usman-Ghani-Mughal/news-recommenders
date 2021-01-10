@@ -3,7 +3,6 @@ import loginImg from "../../Images/login.svg";
 
 // import actions
 
-
 export class Register extends React.Component {
   constructor(props) {
     super(props);

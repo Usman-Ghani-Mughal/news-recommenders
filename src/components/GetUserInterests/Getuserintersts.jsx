@@ -146,7 +146,7 @@ class Getuserintersts extends React.Component{
                 }
                 
             }else if(name==="SPORTS"){
-                if(this.state.portsselected){
+                if(this.state.sportsselected){
                     this.countDecrement();
                     this.sportschnageState();
                     this.props.removeCategories(name);
@@ -488,7 +488,6 @@ class Getuserintersts extends React.Component{
                     </div>
     
                 </div>
-    
     
                 {/* 2nd Row*/}
                 <div className="row">

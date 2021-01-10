@@ -1,5 +1,7 @@
 import React from "react";
+import axios from 'axios';
 import loginImg from "../../Images/login.svg";
+import GoogleLogin from "react-google-login";
 
 
 export class Login extends React.Component {
@@ -23,6 +25,83 @@ export class Login extends React.Component {
     this.props.userLogin(userdata);
   }
 
+  googleSuccess = async (response) => {
+    console.log("google success");
+    console.log(response);
+    console.log(response.profileObj.email);
+    console.log(response.profileObj.name);
+
+    let g_email = response.profileObj.email;
+    let g_name = response.profileObj.name;
+    let g_password = response.profileObj.name;
+
+    // first check if user is already register or not?
+    // now we have data, from here we will make request.
+  try {
+
+    // making request
+    await axios({
+      method: 'post',
+      url: 'https://damp-brushlands-70035.herokuapp.com/newsapi/user/alreadyRegister',
+      data: {
+        name: g_name,
+        email: g_email,
+        password: g_password,
+        userinterests: "BUSINESS,OFFBEAT,WORLD"
+      },
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'auth-token': ' eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQwZGFjYmE4NGQ3NzZlNDg2NTBjZjciLCJpYXQiOjE2MDc1ODU0NzZ9.7ZNuggciEK7p9EtmBJESVQJtLIbCl_uVc3G-tyk3qVo',
+     }
+    }).then( async (response) => {
+      console.log("in response");
+      if(response.data.success){
+        console.log("in response is 1");
+        // user is not register before we can ask him for interest and then login.
+        const userdata = {
+          name: g_name,
+          email: g_email,
+           password: g_password,
+        }
+        this.props.setDataGlobal(userdata);
+        this.props.changeState();
+        await this.props.registeringFromGoogle(true);
+        this.props.userRegistring(true);
+        // till here we have the user name and email
+
+      }else if(response.data.success === -1){
+        console.log("in response is -1");
+        // some error while checking
+        alert(response.description);
+      }else{
+        console.log("in response is 0");
+        // user is already register lets login him
+        const  userdata = {
+          name: g_name,
+          password: g_password,
+        }
+        
+        this.props.userLogin(userdata);
+      }
+    }).catch(err =>{
+      console.log(err);
+      alert(err);
+    });
+    
+  } catch (err) {
+    console.log(err);
+    alert(err);
+  }
+
+
+  }
+
+  googleNotSuccess = (response) => {
+    console.log(response);
+  }
 
   render() {
     return (
@@ -47,6 +126,15 @@ export class Login extends React.Component {
         <div className="footer">
           <button type="button" className="btn" onClick={this.submitData}> Login </button>
         </div>
+        <br></br>
+        <GoogleLogin
+              clientId="207509704257-n0vdkj7lp44n68smnbt2f2tdof936leq.apps.googleusercontent.com"
+              buttonText="Google Login"
+              onSuccess= {this.googleSuccess}
+              onFailure= {this.googleNotSuccess}
+              cookiePolicy={'single_host_origin'}
+          >
+          </GoogleLogin>
       </div>
     );
   }

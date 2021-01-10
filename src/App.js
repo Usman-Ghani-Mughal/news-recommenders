@@ -162,7 +162,7 @@ function App()
  const registerUsertoDB = async () => {
   // gether all user data
   let userintersts_array = localStorage.getItem("userinterstsarray");
-  
+
   let username_req = userData_req.name;
   let email_req = userData_req.email;
   let password_req = userData_req.password;
@@ -194,10 +194,12 @@ function App()
       }
     }).catch(err =>{
       console.log(err);
+      alert(err);
     });
     
   } catch (err) {
     console.log(err);
+    alert(err);
   }
 }
 

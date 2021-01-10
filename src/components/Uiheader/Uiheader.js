@@ -19,15 +19,16 @@ function Uiheader(props){
             props.userRegistring(false);
             props.registeringFromGoogle(false);
         }else{
+            await props.interestSubmited();
+            props.registerUsertoDB();
+            props.userRegistring(false);
             console.log("In else from google is not update");
         }
         
 
 
 
-       //await props.interestSubmited();
-       //props.registerUsertoDB();
-       //props.userRegistring(false);
+       
     }
 
 

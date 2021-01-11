@@ -1,6 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+.logo_img{
+    max-width: 300px;
+    max-height: 40px;
+}
+
 .uih-div{
     margin-left: 0%;
     margin-right: 0%;

@@ -164,6 +164,7 @@ function App()
  const registerUsertoDB = async () => {
   // gether all user data
   let userintersts_array = localStorage.getItem("userinterstsarray");
+  localStorage.removeItem("userinterstsarray");
 
   let username_req = userData_req.name;
   let email_req = userData_req.email;
@@ -230,6 +231,7 @@ const interestSubmited = () => {
             reg: false
           });
           localStorage.setItem("userinterstsarray", categories.UIarray);
+          chnageCategories({UIarray:[]});
     }
   }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../componentscss/uiheader.css'
+import logo_img from "../../Images/logo7.jpeg";
 
 
 function Uiheader(props){
@@ -36,7 +37,8 @@ function Uiheader(props){
         <div className="continer-fluid uih-div"> 
             <div className='row'>
                 <div className='col-md-3'>
-                    <h1 className="logo">Logo</h1>
+                    <img src={logo_img} className="logo_img"></img>
+                    {/* <h1 className="logo">Logo</h1> */}
                 </div>
                 <div className='col-md-7 info-class'>
                     <h3>Please select your 3 interests</h3>

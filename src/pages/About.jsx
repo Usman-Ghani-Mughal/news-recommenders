@@ -1,5 +1,5 @@
 import React from "react";
-import about_image from "../Images/contact.jpg";
+import about_image from "../Images/contact.png";
 // // for accessing global store
 // import {useDispatch} from 'react-redux'
 // import {login} from "../actions/loginAction";

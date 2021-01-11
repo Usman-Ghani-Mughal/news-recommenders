@@ -1,5 +1,6 @@
 import React from 'react'
 // import img1 from "../../Images/travel.jpg";
+import { Link } from "react-router-dom";
 import "../../componentscss/card.css";
 
 
@@ -22,9 +23,9 @@ function Card(props){
                 </p>
                 <span>Source : </span>
                 <span className="fs-13 font-weight-bold">{props.news.Source}</span><br/>
-                <a href={props.news.Link} className="font-weight-bold text-dark pt-2"
-                  >Read Article</a
-                >
+                <a  rel={'external'}  href={"https://"+props.news.Link} className="font-weight-bold text-dark pt-2"
+                  >Read Article
+                  </a>
               </div>
         </>
       );

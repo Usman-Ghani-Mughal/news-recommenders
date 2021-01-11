@@ -322,7 +322,7 @@ const registeringFromGoogle =  async (decision) => {
           {/* <Route exact path="/entertainment" component= {Entertainment}></Route> */}
           <Route exact path="/about" component= {About}></Route>
           <Route exact path="/contact" component= {Contact}></Route>
-          <Redirect to="/"></Redirect>
+          {/* <Redirect to="/"></Redirect> */}
         </Switch>
         <MainFooter></MainFooter>
       </>

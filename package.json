@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "cors": "^2.8.5",
+    "formik": "^2.2.6",
     "jquery": "^3.5.1",
     "mdbreact": "^5.0.1",
     "node-sass": "^4.14.1",
@@ -24,7 +25,8 @@
     "react-slick": "^0.27.13",
     "redux": "^4.0.5",
     "styled-components": "^5.2.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.8"
   },
   "scripts": {
     "start": "react-scripts start",

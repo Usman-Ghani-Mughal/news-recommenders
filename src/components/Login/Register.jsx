@@ -1,65 +1,141 @@
-import React from "react";
+import React, {useState} from 'react'
 import loginImg from "../../Images/login.svg";
 
-// import actions
 
-export class Register extends React.Component {
-  constructor(props) {
-    super(props);
+// import * as yup from 'yup';
+import { regSchema } from "../../Validations/RegisterValidation";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+// Import comonents
+import ErrorText from "../Errormessages/ErrorText";
 
-    this.state = {
-      name: "",
-      email: "",
-      password: ""
-    }
-    
+
+// // previous submit
+// const saveUserTOSTore = async () => {
+//   // // validate the data
+//   // let form_data = {
+//   //   username: this.state.name,
+//   //   email: this.state.email,
+//   //   password: this.state.password, 
+//   // }
+
+//   // const isValid = await regSchema.isValid(form_data);
+//   // if(isValid){
+ 
+  
+//   // }else{
+
+//   // }
+
+// }
+
+
+
+export function Register(props){
+
+// ----------------------- Required function and other stuf ---------------------------------- //
+  // import init values
+const intitialValues = {
+  username : '',
+  email : '',
+  password : '',
+}
+// onsubmit
+const onSubmit = async (values) => {
+  console.log('form data : ', values);
+   //make user object
+  const  userdata = {
+    name: values.username,
+    email: values.email,
+    password: values.password,
   }
+  // register data
+  props.setDataGlobal(userdata);
+  props.changeState();
+  props.userRegistring(true);
+}
+// ---------------------------------------------------------------------------- //
+  // const [name, setname] = useState("");
+  // const [email, setnemail] = useState("");
+  // const [password, setpassword] = useState("");
 
-  saveUserTOSTore = () => {
-    // validate the data
-    //make user object
-      const  userdata = {
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-    }
-    this.props.setDataGlobal(userdata);
-    this.props.changeState();
-    this.props.userRegistring(true);
-  }
-
-
-  render() {
-
-    return (
-
-      <div className="base-container" ref={this.props.containerRef}>
+  return(
+    <>
+      
+      <div className="base-container" ref={props.containerRef}>
         <div className="header">Register</div>
-        <div className="content">
-          <div className="image">
-            <img src={loginImg}  alt="RegisterImage"/>
-          </div>
-          <div className="form">
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input type="text" name="username" placeholder="username" value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}/>
+          <div className="content">
+            <div className="image">
+                <img src={loginImg}  alt="RegisterImage"/>
             </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input type="email" name="email" placeholder="email" value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/>
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input type="password" name="password" placeholder="password" value={this.state.password} onChange={(e) => this.setState({password: e.target.value})}/>
-            </div>
-          </div>
-        </div>
-        <div className="footer">
-          <button type="button" className="btn" onClick={this.saveUserTOSTore}>Register</button>
+            <Formik
+              initialValues = {intitialValues}
+              validationSchema = {regSchema}
+              onSubmit = {onSubmit}
+            >  
+              <Form>
+                <div className="form">
+                  <div className="form-group">
+                    <label htmlFor="username">Username</label>
+                    <Field type="text" name="username" placeholder="username"/>
+                    <ErrorMessage
+                      name="username"
+                      component= {ErrorText}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <Field type="email" name="email" placeholder="email@email.com"/>
+                    <ErrorMessage
+                      name="email"
+                      component= {ErrorText}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="password">Password</label>
+                    <Field type="password" name="password" placeholder="password"/>
+                    <ErrorMessage
+                      name="password"
+                      component= {ErrorText}
+                    />
+                  </div>
+                </div>
+                  <div className="footer">
+                    <button type="submit" className="btn">Register</button>
+                  </div>
+              </Form>
+          </Formik>
         </div>
       </div>
-    );
-  }
+    </>
+  )
+
+
 }
+
+//  default Register;
+
+// export class Register extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       name: "",
+//       email: "",
+//       password: ""
+//     }
+    
+//   }
+
+  
+
+
+//   render() {
+
+//     return (
+
+      
+//     );
+//   }
+// }
 
 //onClick = {this.saveUserTOSTore()}

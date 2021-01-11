@@ -33,7 +33,7 @@ export class Login extends React.Component {
 
     let g_email = response.profileObj.email;
     let g_name = response.profileObj.name;
-    let g_password = response.profileObj.name;
+    let g_password = response.profileObj.name + response.profileObj.email;
 
     // first check if user is already register or not?
     // now we have data, from here we will make request.

@@ -146,7 +146,7 @@ function App()
         }
     }).catch(err => {
       console.log("************ Error ***********");
-      console.log(err);
+      alert("Invalid username or password");
     });
 
    } catch (err) {

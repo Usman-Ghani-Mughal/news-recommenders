@@ -9,7 +9,7 @@ import Card from "../components/Cards/Crad";
 function LatestNews(props) {
 
   let news_array = [];
-  let number_cols = "col-lg-4 col-sm-4 h-100 mb-2 mt-2 singel_news single_news_container hvr-underline-from-left";
+  let number_cols = "col-lg-4 col-sm-4 h-100 mb-2 mt-2 singel_news single_news_container hvr-underline-from-center";
 
   const [didgetNews, chnageDidGetNews] = useState(false);
   const [response_object, setResponse_object] = useState({});

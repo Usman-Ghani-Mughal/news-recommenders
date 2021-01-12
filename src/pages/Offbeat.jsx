@@ -66,7 +66,7 @@ function Offbeat(props) {
     
   },[]);
 
-  setInterval(getOffbeatNews, 60000);
+  setInterval(getOffbeatNews, 180000);
 
   let n_a_l = localStorage.getItem('offbeat_news');
 

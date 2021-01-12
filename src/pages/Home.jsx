@@ -94,7 +94,7 @@ function Home(props) {
     getRecomendedNews();
   },[]);
 
-  setInterval(getRecomendedNews, 60000);
+  setInterval(getRecomendedNews, 180000);
   
   let a_0 = localStorage.getItem('I0_Array_l');
   let a_1 = localStorage.getItem('I1_Array_l');

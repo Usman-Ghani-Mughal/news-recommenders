@@ -54,7 +54,7 @@ function Sports(props) {
     getSportstNews();
   },[]);
 
-  setInterval(getSportstNews, 60000);
+  setInterval(getSportstNews, 180000);
 
   let n_a_l = localStorage.getItem('sports_news');
 

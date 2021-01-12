@@ -66,7 +66,7 @@ function LatestNews(props) {
     
   },[]);
 
-  setInterval(getLatestNews, 60000);
+  setInterval(getLatestNews, 180000);
 
   let n_a_l = localStorage.getItem('latest_news');
 

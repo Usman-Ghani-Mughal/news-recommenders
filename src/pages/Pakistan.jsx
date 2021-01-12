@@ -57,7 +57,7 @@ function Pakistan(props) {
     getPakistanNews();
   },[]);
 
-  setInterval(getPakistanNews, 60000);
+  setInterval(getPakistanNews, 180000);
 
   let n_a_l = localStorage.getItem('pakistan_news');
 

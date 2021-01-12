@@ -23,7 +23,7 @@ function Card(props){
                 </p>
                 <span>Source : </span>
                 <span className="fs-13 font-weight-bold">{props.news.Source}</span><br/>
-                <a  rel={'external'}  href={"https://"+props.news.Link} className="font-weight-bold text-dark pt-2"
+                <a  rel={'external'}  href={"https://"+props.news.Link} className="font-weight-bold text-dark pt-2 read_article"
                   >Read Article
                   </a>
               </div>

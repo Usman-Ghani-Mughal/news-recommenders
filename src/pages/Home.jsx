@@ -45,7 +45,7 @@ function Home(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getRecomendedNews = async () =>{
-
+    console.log("grt home");
     const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/recomendedNews', { 
         params: { userinterests: udata.userinterests },
         headers:{

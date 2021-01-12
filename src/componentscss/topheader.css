@@ -10172,7 +10172,7 @@
   
   @media (max-width: 999px) {
     .navbar .social-media {
-      display: none;
+      display: inline;
     }
   }
   
@@ -10196,12 +10196,12 @@
     font-style: normal;
     line-height: 2.08;
     letter-spacing: normal;
-    padding-right: 42px;
+    padding-right: 10px;
   }
   
   @media (max-width: 999px) {
     .navbar-left, .navbar-right {
-      display: none;
+      display: inline;
     }
   }
   
@@ -10226,7 +10226,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    padding-left: 22px;
+    padding-left: 5px;
   }
   
   .social-media li {

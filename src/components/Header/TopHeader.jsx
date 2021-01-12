@@ -45,23 +45,29 @@ function TopHeader(props){
           <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light">
               <div className="d-flex justify-content-between align-items-center navbar-top">
-                <ul className="navbar-left">
-                  <li className="forFont">{cdate}</li>
-                  <li className="forFont">{ctime}</li>
+                
+                <ul className="navbar-left ">
+                  <li className="forFont nav-item">{cdate}</li>
+                  <li className="forFont nav-item">{ctime}</li>
                 </ul>
+
                 <div>
                   <a className="navbar-brand" href="/"><img src={logo} alt="ProjectLogo"/>
                   </a>
                 </div>
+
                 <div className="d-flex">
+
                   <ul className="navbar-right">
-                    <li>
-                      <a href="/" className="forFont">{udata.username}</a>
+                    <li className="nav-item">
+                      <a href="/" className="forFont nav-link">{udata.username}</a>
                     </li>
-                    <li>
-                      <a href="/" onClick={userLogout} className="forFont">Logout</a>
+                    <li className="nav-item">
+                      <a href="/" onClick={userLogout} className="forFont nav-link">Logout</a>
                     </li>
+
                   </ul>
+
                   <ul className="social-media">
                     <li>
                       <a href="https://www.instagram.com/usman.mughal12345/">

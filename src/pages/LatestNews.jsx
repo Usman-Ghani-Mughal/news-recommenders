@@ -17,7 +17,7 @@ function LatestNews(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getLatestNews = async () =>{
-
+    console.log("grt latest");
     const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/latestnews', { 
         headers:{
           'Accept': 'application/json',
@@ -44,6 +44,7 @@ function LatestNews(props) {
         console.log("======== Error ===========");
         console.log(err) 
     })
+    console.log("done latest");
   }
 
   useEffect(  () => {

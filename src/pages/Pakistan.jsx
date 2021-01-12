@@ -20,7 +20,7 @@ function Pakistan(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getPakistanNews = async () =>{
-
+    console.log("grt pakistan");
     const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/pakistan', { 
         headers:{
           'Accept': 'application/json',

@@ -17,7 +17,7 @@ function World(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getWorldNews = async () =>{
-
+    console.log("grt world");
     const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/world', { 
         headers:{
           'Accept': 'application/json',

@@ -256,7 +256,7 @@ function Home(props) {
   }
   else{
       return(
-        <div> we dont have any thing</div>
+        <div></div>
       )
   }
 }

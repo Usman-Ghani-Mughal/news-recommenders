@@ -46,7 +46,7 @@ function TopHeader(props){
             <nav className="navbar navbar-expand-lg navbar-light">
               <div className="d-flex justify-content-between align-items-center navbar-top">
                 
-                <ul className="navbar-left ">
+                <ul className="navbar-left">
                   <li className="forFont nav-item">{cdate}</li>
                   <li className="forFont nav-item">{ctime}</li>
                 </ul>

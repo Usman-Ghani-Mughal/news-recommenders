@@ -193,7 +193,7 @@ function App()
       if(response.data.success){
         alert('User is register succesfully');
       }else{
-        alert(response.description);
+        alert(response.data.description);
       }
     }).catch(err =>{
       console.log(err);

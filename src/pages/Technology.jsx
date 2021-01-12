@@ -51,7 +51,7 @@ function Technology(props) {
   },[]);
 
 
-  setInterval(getTechnologyNews, 180000);
+  setInterval(getTechnologyNews, 3600000);
   let n_a_l = localStorage.getItem('technology_news');
 
   if(n_a_l){

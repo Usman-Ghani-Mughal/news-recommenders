@@ -53,7 +53,7 @@ function Business(props) {
     getBusinessNews();
   },[]);
 
-  setInterval(getBusinessNews, 180000);
+  setInterval(getBusinessNews, 3600000);
 
   let n_a_l = localStorage.getItem('business_news');
 

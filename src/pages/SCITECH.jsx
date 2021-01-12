@@ -66,7 +66,7 @@ function SCITECH(props) {
     
   },[]);
 
-  setInterval(getSCITECHNews, 180000);
+  setInterval(getSCITECHNews, 3600000);
 
   let n_a_l = localStorage.getItem('scitech_news');
 

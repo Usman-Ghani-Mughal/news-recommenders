@@ -66,7 +66,7 @@ function Health(props) {
     
   },[]);
 
-  setInterval(getHealthNews, 180000);
+  setInterval(getHealthNews, 3600000);
 
   let n_a_l = localStorage.getItem('health_news');
 

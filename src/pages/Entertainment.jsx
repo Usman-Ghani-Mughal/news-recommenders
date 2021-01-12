@@ -66,7 +66,7 @@ function Entertainment(props) {
     
   },[]);
 
-  setInterval(getEntertainmentNews, 180000);
+  setInterval(getEntertainmentNews, 3600000);
 
   let n_a_l = localStorage.getItem('entertainment_news');
 

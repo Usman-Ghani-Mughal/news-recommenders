@@ -66,7 +66,7 @@ function LifeStyle(props) {
     
   },[]);
 
-  setInterval(getLifeStyleNews, 180000);
+  setInterval(getLifeStyleNews, 3600000);
 
   let n_a_l = localStorage.getItem('lifestyle_news');
 

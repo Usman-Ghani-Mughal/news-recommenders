@@ -52,7 +52,7 @@ function World(props) {
   },[]);
 
 
-  setInterval(getWorldNews, 180000);
+  setInterval(getWorldNews, 3600000);
 
   let n_a_l = localStorage.getItem('world_news');
 

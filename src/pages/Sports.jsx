@@ -34,6 +34,9 @@ function Sports(props) {
           setNewsArray(news_array);
 
         setResponse_object(response.data);
+
+        // store data in local
+        localStorage.setItem("sports_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
         console.log("======== ok =========");
 
@@ -51,8 +54,50 @@ function Sports(props) {
     getSportstNews();
   },[]);
 
+  setInterval(getSportstNews, 60000);
+
+  let n_a_l = localStorage.getItem('sports_news');
+
+  if(n_a_l){
+
+    n_a_l = JSON.parse(n_a_l);
+
+    return(
+      <>
+        <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="text-center">
+                  <h1 className="text-center mt-5">
+                    Sports News
+                  </h1>
+                      <p className="text-secondary fs-15">
+                      I don’t count my situps. I only start counting once it starts hurting.
+                      </p>
+                  <span className="fs-13 font-weight-bold">Muhammad Ali</span>
+                </div>
+                <h5 className="text-muted font-weight-medium mb-3">Sports News</h5>
+              </div>
+            </div>
+
+            <div className="world-news">
+              <div className="row w-100 h-25">
+
+                {n_a_l.map( (news, index) => (
+                    <Card key={news._id} news={news} number_cols={number_cols}></Card>
+                ) )}
+                
+              </div> 
+            </div>
+        </div>
+      </>
+    )
+
+
+  }
+
   
-  if(didgetNews){
+  else if(didgetNews){
     return(
       <>
         <div className="container">

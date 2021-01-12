@@ -33,6 +33,9 @@ function Business(props) {
           setNewsArray(news_array);
 
         setResponse_object(response.data);
+
+        // store data in local
+        localStorage.setItem("business_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
         console.log("======== ok =========");
 
@@ -50,7 +53,48 @@ function Business(props) {
     getBusinessNews();
   },[]);
 
-  if(didgetNews){
+  setInterval(getBusinessNews, 60000);
+
+  let n_a_l = localStorage.getItem('business_news');
+
+  if(n_a_l){
+    n_a_l = JSON.parse(n_a_l);
+
+    return(
+      <>
+        <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="text-center">
+                  <h1 className="text-center mt-5">
+                    Business News
+                  </h1>
+                      <p className="text-secondary fs-15">
+                      Always deliver more than expected.
+                      </p>
+                  <span className="fs-13 font-weight-bold">Larry Page, co-founder of Google</span>
+                </div>
+                <h5 className="text-muted font-weight-medium mb-3">Business News</h5>
+              </div>
+            </div>
+
+            <div className="world-news">
+              <div className="row w-100 h-25">
+
+                {n_a_l.map( (news, index) => (
+                    <Card key={news._id} news={news} number_cols={number_cols}></Card>
+                ) )}
+                
+              </div> 
+            </div>
+        </div>
+      </>
+    )
+
+
+  }
+
+  else if(didgetNews){
     return(
       <>
         <div className="container">

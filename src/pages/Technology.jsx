@@ -33,6 +33,7 @@ function Technology(props) {
           setNewsArray(news_array);
 
         setResponse_object(response.data);
+        localStorage.setItem("technology_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
         console.log("======== ok =========");
 
@@ -50,8 +51,45 @@ function Technology(props) {
   },[]);
 
 
+  setInterval(getTechnologyNews, 60000);
+  let n_a_l = localStorage.getItem('technology_news');
 
-  if(didgetNews){
+  if(n_a_l){
+    n_a_l = JSON.parse(n_a_l);
+    return(
+      <>
+        <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="text-center">
+                  <h1 className="text-center mt-5">
+                    Technology News
+                  </h1>
+                      <p className="text-secondary fs-15">
+                      It has become appallingly obvious that our technology has exceeded our humanity.
+                      </p>
+                  <span className="fs-13 font-weight-bold"> Albert Einstein</span>
+                </div>
+                <h5 className="text-muted font-weight-medium mb-3">Technology News</h5>
+              </div>
+            </div>
+
+            <div className="world-news">
+              <div className="row w-100 h-25">
+
+                {n_a_l.map( (news, index) => (
+                    <Card key={news._id} news={news} number_cols={number_cols}></Card>
+                ) )}
+                
+              </div> 
+            </div>
+        </div>
+      </>
+    )
+  }
+
+  
+  else if(didgetNews){
     return(
       <>
         <div className="container">

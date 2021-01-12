@@ -36,6 +36,10 @@ function Pakistan(props) {
           setNewsArray(news_array);
 
         setResponse_object(response.data);
+
+        // store data in local
+        localStorage.setItem("pakistan_news", JSON.stringify(news_array));
+
         chnageDidGetNews(true);
         console.log("======== ok =========");
 
@@ -53,7 +57,49 @@ function Pakistan(props) {
     getPakistanNews();
   },[]);
 
-  if(didgetNews){
+  setInterval(getPakistanNews, 60000);
+
+  let n_a_l = localStorage.getItem('pakistan_news');
+
+  if(n_a_l){
+    n_a_l = JSON.parse(n_a_l);
+
+    return(
+      <>
+        <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="text-center">
+                  <h1 className="text-center mt-5">
+                    Pakistan News
+                  </h1>
+                      <p className="text-secondary fs-15">
+                      There is no power on earth that can undo Pakistan.
+                      </p>
+                  <span className="fs-13 font-weight-bold">Muhammad Ali Jinnah</span>
+                </div>
+                <h5 className="text-muted font-weight-medium mb-3">Pakistan News</h5>
+              </div>
+            </div>
+
+            <div className="world-news">
+              <div className="row w-100 h-25">
+
+                {n_a_l.map( (news, index) => (
+                    <Card key={news._id} news={news} number_cols={number_cols}></Card>
+                ) )}
+                
+              </div> 
+            </div>
+        </div>
+      </>
+    )
+
+  }
+
+  
+
+  else if(didgetNews){
     return(
       <>
         <div className="container">

@@ -64,22 +64,22 @@ function TopHeader(props){
                   </ul>
                   <ul className="social-media">
                     <li>
-                      <a href="https://www.instagram.com/">
+                      <a href="https://www.instagram.com/usman.mughal12345/">
                         <i className="mdi mdi-instagram"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="https://web.facebook.com/">
+                      <a href="https://www.facebook.com/ZUPatners/">
                         <i className="mdi mdi-facebook"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.youtube.com/">
+                      <a href="https://www.youtube.com/channel/UC_InY1Qb2_wcp1jVO1-tNgg">
                         <i className="mdi mdi-youtube"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.linkedin.com/">
+                      <a href="https://www.linkedin.com/in/usman-ghani-a50488142/">
                         <i className="mdi mdi-linkedin"></i>
                       </a>
                     </li>

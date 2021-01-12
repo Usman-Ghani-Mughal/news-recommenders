@@ -65,9 +65,48 @@ function LatestNews(props) {
     
   },[]);
 
-  setInterval(getLatestNews, 36666666);
+  setInterval(getLatestNews, 60000);
 
-  if(didgetNews){
+  let n_a_l = localStorage.getItem('latest_news');
+
+  if(n_a_l){
+    n_a_l = JSON.parse(n_a_l);
+
+    return(
+      <>
+        <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="text-center">
+                  <h1 className="text-center mt-5">
+                    Latest News
+                  </h1>
+                      <p className="text-secondary fs-15">
+                        A good newspaper is a nation talking to itself.
+                      </p>
+                  <span className="fs-13 font-weight-bold">Arthur Miller</span>
+                </div>
+                <h5 className="text-muted font-weight-medium mb-3">Latest News</h5>
+              </div>
+            </div>
+
+            <div className="world-news">
+              <div className="row w-100 h-25">
+
+                {n_a_l.map( (news, index) => (
+                    <Card key={news._id} news={news} number_cols={number_cols}></Card>
+                ) )}
+                
+              </div> 
+            </div>
+        </div>
+      </>
+    )
+
+
+  }
+
+  else if(didgetNews){
     return(
       <>
         <div className="container">

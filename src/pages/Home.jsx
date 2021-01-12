@@ -64,14 +64,18 @@ function Home(props) {
           I0_Array = response.data.NewsArray.filter(news => {return news.Label === I0});
           I0_Array = I0_Array.reverse();
           seti0array(I0_Array);
+          localStorage.setItem('I0_Array_l', JSON.stringify(I0_Array));
+          
 
           I1_Array = response.data.NewsArray.filter(news => {return news.Label === I1});
           I1_Array = I1_Array.reverse();
           seti1array(I1_Array);         
+          localStorage.setItem('I1_Array_l', JSON.stringify(I1_Array));
 
           I2_Array = response.data.NewsArray.filter(news => {return news.Label === I2});
           I2_Array = I2_Array.reverse();
           seti2array(I2_Array);
+          localStorage.setItem('I2_Array_l', JSON.stringify(I2_Array));
 
         setResponse_object(response.data);
         chnageDidGetNews(true);
@@ -90,7 +94,94 @@ function Home(props) {
     getRecomendedNews();
   },[]);
 
-  if(didgetNews){
+  setInterval(getRecomendedNews, 60000);
+  
+  let a_0 = localStorage.getItem('I0_Array_l');
+  let a_1 = localStorage.getItem('I1_Array_l');
+  let a_2 = localStorage.getItem('I2_Array_l');
+
+
+  if(a_0 && a_1 && a_2){
+
+    a_0 = JSON.parse(a_0);
+    a_1 = JSON.parse(a_1);
+    a_2 = JSON.parse(a_2);
+    
+    
+    return(
+      <>
+        <div className="container">
+        <div className="world-news">
+
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="d-flex position-relative  float-left">
+                  <h3 className="section-title">{I0}</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="row w-100 h-25">
+              <Carousel className="single_news_container hvr-underline-from-center" breakPoints={breakPoints}>
+                {a_0.map( (news, index) => (
+                  <Card  key={news._id} news={news} number_cols={number_cols} ></Card>
+                ) )}
+              </Carousel>
+            </div>
+
+        </div>
+      </div>
+
+
+      <div className="container">
+        <div className="world-news">
+
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="d-flex position-relative  float-left">
+                  <h3 className="section-title">{I1}</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="row w-100 h-25">
+              <Carousel className="single_news_container hvr-underline-from-center" breakPoints={breakPoints}>
+                {a_1.map( (news, index) => (
+                     <Card key={news._id} news={news} number_cols={number_cols} ></Card>
+                ) )}
+              </Carousel>
+            </div>
+            
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="world-news">
+
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="d-flex position-relative  float-left">
+                  <h3 className="section-title">{I2}</h3>
+                </div>
+              </div>
+            </div>
+            <div className="row w-100 h-25">
+              <Carousel className="single_news_container hvr-underline-from-center" breakPoints={breakPoints}>
+                {a_2.map( (news, index) => (
+                  <Card key={news._id} news={news} number_cols={number_cols} ></Card>
+                ) )}
+              </Carousel>
+            </div>
+            
+        </div>
+      </div>
+      
+    </>
+
+    )
+  }
+
+  else if(didgetNews){
       return (
       <>
         <div className="container">
@@ -162,9 +253,10 @@ function Home(props) {
     </>
       )
 
-  }else{
+  }
+  else{
       return(
-        <div></div>
+        <div> we dont have any thing</div>
       )
   }
 }

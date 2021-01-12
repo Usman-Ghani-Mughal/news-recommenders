@@ -6,7 +6,7 @@ import Card from "../components/Cards/Crad";
 // import {useDispatch} from 'react-redux'
 // import {login} from "../actions/loginAction";
 
-function Entertainment(props) {
+function Offbeat(props) {
 
   let news_array = [];
   let number_cols = "col-lg-4 col-sm-4 h-100 mb-2 mt-2 singel_news single_news_container hvr-underline-from-center";
@@ -16,9 +16,9 @@ function Entertainment(props) {
   const [newsArray, setNewsArray] = useState([]);
 
   // Similar to componentDidMount and componentDidUpdate:
-  const  getEntertainmentNews = async () =>{
+  const  getOffbeatNews = async () =>{
     console.log("grt latest");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/entertainment', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/offbeat', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ function Entertainment(props) {
 
         setResponse_object(response.data);
         // store data in local
-        localStorage.setItem("entertainment_news", JSON.stringify(news_array));
+        localStorage.setItem("offbeat_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
         console.log("========= got data ==========");
 
@@ -49,7 +49,7 @@ function Entertainment(props) {
 
   useEffect(  () => {
       console.log("Use Effect block");
-      getEntertainmentNews();
+      getOffbeatNews();
     // let latestnews_t = localStorage.getItem("latest_news");
 
     // if(latestnews_t){
@@ -66,9 +66,9 @@ function Entertainment(props) {
     
   },[]);
 
-  setInterval(getEntertainmentNews, 60000);
+  setInterval(getOffbeatNews, 60000);
 
-  let n_a_l = localStorage.getItem('entertainment_news');
+  let n_a_l = localStorage.getItem('offbeat_news');
 
   if(n_a_l){
     n_a_l = JSON.parse(n_a_l);
@@ -80,14 +80,14 @@ function Entertainment(props) {
               <div className="col-sm-12">
                 <div className="text-center">
                   <h1 className="text-center mt-5">
-                  Entertainment News
+                    OffBeat News
                   </h1>
                       <p className="text-secondary fs-15">
-                      Entertainment has this way of resetting itself.
+                            You can’t blame gravity for falling in love.
                       </p>
-                  <span className="fs-13 font-weight-bold">Zachary Levi</span>
+                  <span className="fs-13 font-weight-bold">Albert Einstein</span>
                 </div>
-                <h5 className="text-muted font-weight-medium mb-3">Entertainment News</h5>
+                <h5 className="text-muted font-weight-medium mb-3">OffBeat News</h5>
               </div>
             </div>
 
@@ -115,14 +115,14 @@ function Entertainment(props) {
               <div className="col-sm-12">
                 <div className="text-center">
                   <h1 className="text-center mt-5">
-                  Entertainment News
+                  OffBeat News
                   </h1>
                       <p className="text-secondary fs-15">
-                      Entertainment has this way of resetting itself.
+                      You can’t blame gravity for falling in love.
                       </p>
-                  <span className="fs-13 font-weight-bold">Zachary Levi</span>
+                  <span className="fs-13 font-weight-bold">Albert Einstein</span>
                 </div>
-                <h5 className="text-muted font-weight-medium mb-3">Entertainment News</h5>
+                <h5 className="text-muted font-weight-medium mb-3">OffBeat News</h5>
               </div>
             </div>
 
@@ -151,4 +151,4 @@ function Entertainment(props) {
   
 }
 
-export default Entertainment;
+export default Offbeat;

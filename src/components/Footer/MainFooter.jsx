@@ -32,15 +32,15 @@ function MainFooter(props) {
                   <li className="menu-title"><NavLink to="/world">World</NavLink></li>
                   <li><NavLink to="/sports">Sports</NavLink></li>
                   <li><NavLink to="/business">Business</NavLink></li>
-                  <li><NavLink to="/">Magazine</NavLink></li>
-                  <li><NavLink to="/">Art</NavLink></li>
+                  <li><NavLink to="/scitech">SCI & TECH</NavLink></li>
+                  <li><NavLink to="/lifestyle">Life Style</NavLink></li>
                 </ul>
               </div>
               <div className="col-sm-3 col-lg-3">
                 <ul className="footer-vertical-nav">
-                  <li className="menu-title"><NavLink to="/">Features</NavLink></li>
-                  <li><NavLink to="/">Photography</NavLink></li>
-                  <li><NavLink to="/">Video</NavLink></li>
+                  <li className="menu-title"><NavLink to="/health">Health</NavLink></li>
+                  <li><NavLink to="/entertainment">Entertainment</NavLink></li>
+                  <li><NavLink to="/offbeat">OFF Beat</NavLink></li>
                   <li><NavLink to="/">Newsletters</NavLink></li>
                   <li><NavLink to="/">Live Events</NavLink></li>
                 </ul>

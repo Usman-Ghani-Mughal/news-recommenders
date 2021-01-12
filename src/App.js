@@ -38,6 +38,10 @@ import Sports from "./pages/Sports";
 import Technology from "./pages/Technology";
 import World from "./pages/World";
 import Entertainment from "./pages/Entertainment";
+import Health from "./pages/Health";
+import LifeStyle from "./pages/LifeStyle";
+import Offbeat from "./pages/Offbeat";
+import SCITECH from "./pages/SCITECH";
 
 
 // for accessing global store
@@ -319,6 +323,13 @@ const registeringFromGoogle =  async (decision) => {
           <Route exact path="/technology" component= {Technology}></Route>
           <Route exact path="/sports" component= {Sports}></Route>
           <Route exact path="/business" component= {Business}></Route>
+
+          <Route exact path="/lifestyle" component= {LifeStyle}></Route>
+          <Route exact path="/health" component= {Health}></Route>
+          <Route exact path="/scitech" component= {SCITECH}></Route>
+          <Route exact path="/offbeat" component= {Offbeat}></Route>
+          <Route exact path="/entertainment" component= {Entertainment}></Route>
+
           {/* <Route exact path="/entertainment" component= {Entertainment}></Route> */}
           <Route exact path="/about" component= {About}></Route>
           <Route exact path="/contact" component= {Contact}></Route>

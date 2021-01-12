@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import logo_img from "../../Images/logo7.jpeg";
+
 // // for accessing global store
 // import {useDispatch} from 'react-redux'
 // import {login} from "../actions/loginAction";
@@ -56,33 +58,33 @@ function MainFooter(props) {
             <div className="row">
               <div className="col-sm-12">
                 <div className="d-flex justify-content-between">
-                  <img src="assets/images/logo.svg" className="footer-logo" alt="" />
+                  <img src={logo_img} className="footer-logo" alt="logo" />
 
                   <div className="d-flex justify-content-end footer-social">
                     <h5 className="m-0 font-weight-600 mr-3 d-none d-lg-flex">Follow on</h5>
                     <ul className="social-media">
                       <li>
-                        <a href="#">
+                        <a href="https://www.instagram.com/usman.mughal12345/">
                           <i className="mdi mdi-instagram"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/ZUPatners/">
                           <i className="mdi mdi-facebook"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="https://www.youtube.com/channel/UC_InY1Qb2_wcp1jVO1-tNgg">
                           <i className="mdi mdi-youtube"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="https://www.linkedin.com/in/usman-ghani-a50488142/">
                           <i className="mdi mdi-linkedin"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="https://ads.twitter.com/">
                           <i className="mdi mdi-twitter"></i>
                         </a>
                       </li>
@@ -106,7 +108,7 @@ function MainFooter(props) {
                     <li><a href="#">Sitemap</a></li>
                   </ul>
                   <p className="font-weight-medium">
-                    © 2020 <a href="https://www.bootstrapdash.com/" target="_blank" className="text-dark">@ BootstrapDash</a>, Inc.All Rights Reserved.
+                    © 2020-2021 <a href="/" target="_blank" className="text-dark">News Recommenders</a>, ZU-Team.
                   </p>
                 </div>
               </div>

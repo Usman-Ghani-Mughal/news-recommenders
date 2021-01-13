@@ -31,7 +31,6 @@ function TopHeader(props){
   setInterval(updateTime, 1000);
   setInterval(updateDate, 1000);
 
-
   // make dispatch object
   const dispatch = useDispatch();
   

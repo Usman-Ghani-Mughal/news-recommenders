@@ -198,6 +198,7 @@ function App()
         alert('User is register succesfully');
       }else{
         alert(response.data.description);
+        localStorage.clear();
       }
     }).catch(err =>{
       console.log(err);

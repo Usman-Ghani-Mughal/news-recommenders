@@ -114,11 +114,11 @@ export class Login extends React.Component {
           </div>
           <div className="form">
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label className="form_labels" htmlFor="username">Username</label>
               <input type="text" name="username" placeholder="username" value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}/>
             </div>
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label className="form_labels" htmlFor="password">Password</label>
               <input type="password" name="password" placeholder="password" value={this.state.password} onChange={(e) => this.setState({password: e.target.value})}/>
             </div>
           </div>

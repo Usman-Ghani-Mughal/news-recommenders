@@ -78,3 +78,181 @@
     padding-top: 0%;
     padding-bottom: 0%;
   }
+
+
+
+  @media screen and  (max-width: 1050px) {
+    .base-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap !important;
+    
+      .header {
+        font-size: 24px;
+        font-family: "Open Sans", sans-serif;
+      }
+    
+      .content {
+        display: flex;
+        flex-direction: column;
+    
+        .image {
+          width: 19em !important;
+          img {
+            width: 90% !important;
+            height: 50% !important;
+          }
+        }
+    
+        .form {
+          margin-top: 1em;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex-wrap: wrap;
+    
+          .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: fit-content;
+            flex-wrap: wrap;
+            label {
+              font-size: 20px;
+            }
+            input {
+              margin-top: 1px;
+              min-width: 15em;
+              height: 35px;
+              padding: 0px 10px;
+              font-size: 16px;
+              font-family: "Open Sans", sans-serif;
+              background-color: #f3f3f3;
+              border: 0;
+              border-radius: 4px;
+              margin-bottom: 8px;
+              transition: all 250ms ease-in-out;
+              &:hover {
+                // background-color: #ffffff;
+                // box-shadow: 0px 0px 14px 0.3px #0e81ce96;
+              }
+    
+              &:focus {
+                outline: none;
+                box-shadow: 0px 0px 12px 0.8px #3E8177;
+              }
+            }
+          }
+        }
+      }
+    
+      .footer {
+        margin-top: 1em;
+        background-color: #FFFFFF;
+      }
+    }
+  
+    .errormsgs{
+      color: red;
+      font-size: 12px;
+      margin-top: 0%;
+      margin-bottom: 0%;
+      padding-top: 0%;
+      padding-bottom: 0%;
+    }
+
+  }
+
+
+
+
+  @media screen and  (max-width: 600px) {
+
+    .base-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap !important;
+    
+      .header {
+        font-size: 24px;
+        font-family: "Open Sans", sans-serif;
+      }
+    
+      .content {
+        display: flex;
+        flex-direction: column;
+    
+        .image {
+          width: 12em !important;
+          img {
+            width: 90% !important;
+            height: 40% !important;
+            margin-bottom: 1px !important;
+          }
+          
+        }
+    
+        .form {
+          margin-top: 0em;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex-wrap: wrap;
+    
+          .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: fit-content;
+            flex-wrap: wrap;
+            label {
+              font-size: 20px;
+            }
+            input {
+              margin-top: 0px;
+              min-width: 12em;
+              height: 25px;
+              padding: 0px 5px;
+              font-size: 16px;
+              font-family: "Open Sans", sans-serif;
+              background-color: #f3f3f3;
+              border: 0;
+              border-radius: 4px;
+              margin-bottom: 8px;
+              transition: all 250ms ease-in-out;
+              &:hover {
+                // background-color: #ffffff;
+                // box-shadow: 0px 0px 14px 0.3px #0e81ce96;
+              }
+    
+              &:focus {
+                outline: none;
+                box-shadow: 0px 0px 12px 0.8px #3E8177;
+              }
+            }
+            .form_labels{
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    
+      .footer {
+        margin-top: 1em;
+        background-color: #FFFFFF;
+      }
+    }
+  
+    .errormsgs{
+      color: red;
+      font-size: 12px;
+      margin-top: 0%;
+      margin-bottom: 0%;
+      padding-top: 0%;
+      padding-bottom: 0%;
+    }
+  }

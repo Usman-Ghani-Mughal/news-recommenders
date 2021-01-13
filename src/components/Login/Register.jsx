@@ -75,7 +75,7 @@ const onSubmit = async (values) => {
               <Form>
                 <div className="form">
                   <div className="form-group">
-                    <label htmlFor="username">Username</label>
+                    <label className="form_labels" htmlFor="username">Username</label>
                     <Field type="text" name="username" placeholder="username"/>
                     <ErrorMessage
                       name="username"
@@ -83,7 +83,7 @@ const onSubmit = async (values) => {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="email">Email</label>
+                    <label className="form_labels" htmlFor="email">Email</label>
                     <Field type="email" name="email" placeholder="email@email.com"/>
                     <ErrorMessage
                       name="email"
@@ -91,7 +91,7 @@ const onSubmit = async (values) => {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="password">Password</label>
+                    <label className="form_labels" htmlFor="password">Password</label>
                     <Field type="password" name="password" placeholder="password"/>
                     <ErrorMessage
                       name="password"

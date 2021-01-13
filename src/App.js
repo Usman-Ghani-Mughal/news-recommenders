@@ -203,11 +203,13 @@ function App()
     }).catch(err =>{
       console.log(err);
       alert(err);
+      localStorage.clear();
     });
     
   } catch (err) {
     console.log(err);
     alert(err);
+    localStorage.clear();
   }
 }
 

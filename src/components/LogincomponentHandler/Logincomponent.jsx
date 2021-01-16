@@ -33,7 +33,7 @@ class LoginComponent extends React.Component {
 
   render() {
     const { isLogginActive } = this.state;
-    const current = isLogginActive ? "Register" : "Login";
+    const current = isLogginActive ? "Sign up" : "Sign in";
     const currentActive = isLogginActive ? "login" : "register";
     return (
       <div className="Appp">

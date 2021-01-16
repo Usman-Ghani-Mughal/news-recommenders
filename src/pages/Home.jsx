@@ -45,7 +45,7 @@ function Home(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getRecomendedNews = async () =>{
-    console.log("grt home");
+    // console.log("grt home");
     const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/recomendedNews', { 
         params: { userinterests: udata.userinterests },
         headers:{
@@ -79,18 +79,18 @@ function Home(props) {
 
         setResponse_object(response.data);
         chnageDidGetNews(true);
-        console.log("======== ok =========");
+        // console.log("======== ok =========");
 
       }
     }) 
       .catch((err) => { 
-        console.log("======== Error ===========");
-        console.log(err) 
+        // console.log("======== Error ===========");
+        // console.log(err) 
     })
   }
 
   useEffect(  () => {
-    console.log("Use Effect");
+    // console.log("Use Effect");
     getRecomendedNews();
   },[]);
 

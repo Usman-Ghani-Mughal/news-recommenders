@@ -4,15 +4,15 @@ import logo_img from "../../Images/logo7.jpeg";
 
 
 function Uiheader(props){
-    console.log("uiheader start");
+    // console.log("uiheader start");
     
-    console.log("ui header : ");
-    console.log(props.fromGoogle);
+    // console.log("ui header : ");
+    // console.log(props.fromGoogle);
 
 
     const submitInterest_registeruser = async () => {
-        console.log("ui header : in function");
-        console.log(props.fromGoogle);
+        // console.log("ui header : in function");
+        // console.log(props.fromGoogle);
         if(props.fromGoogle){
             await props.interestSubmited();
             // Register and Login here.
@@ -23,7 +23,7 @@ function Uiheader(props){
             await props.interestSubmited();
             props.registerUsertoDB();
             props.userRegistring(false);
-            console.log("In else from google is not update");
+            // console.log("In else from google is not update");
         }
         
 

@@ -133,7 +133,7 @@ function App()
          'auth-token': ' eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQwZGFjYmE4NGQ3NzZlNDg2NTBjZjciLCJpYXQiOjE2MDc1ODU0NzZ9.7ZNuggciEK7p9EtmBJESVQJtLIbCl_uVc3G-tyk3qVo',
       }
     }).then( (response) =>{
-        console.log("************ Ok ***********");
+        // console.log("************ Ok ***********");
         // if response success is ok 
         if(response.data.success){
           let userLogin_info = {
@@ -149,12 +149,12 @@ function App()
           alert(response.data.description);
         }
     }).catch(err => {
-      console.log("************ Error ***********");
+      // console.log("************ Error ***********");
       alert("Invalid username or password");
     });
 
    } catch (err) {
-    console.log(err);
+    // console.log(err);
    }
 
  }
@@ -201,13 +201,13 @@ function App()
         localStorage.clear();
       }
     }).catch(err =>{
-      console.log(err);
+      // console.log(err);
       alert(err);
       localStorage.clear();
     });
     
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     alert(err);
     localStorage.clear();
   }
@@ -221,7 +221,7 @@ const google_login_register = async () => {
     password: password_req,
   }
   await registerUsertoDB();
-  console.log(userdata);
+  // console.log(userdata);
   await userLogin(userdata);
 }
 
@@ -289,9 +289,9 @@ const setDataGlobal = async (userdata) => {
 
 // set user is registring using goole.
 const registeringFromGoogle =  async (decision) => {
-  console.log("registering from google called");
+  // console.log("registering from google called");
   await dispatch(googlelogin(decision));
-  console.log("registering from google called done");
+  // console.log("registering from google called done");
 }
    // ============================================================  ======================================================================   //
    /*

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import loginImg from "../../Images/login.svg";
+import loginImg from "../../Images/contact.png";
 
 
 // import * as yup from 'yup';
@@ -41,7 +41,7 @@ const intitialValues = {
 }
 // onsubmit
 const onSubmit = async (values) => {
-  console.log('form data : ', values);
+  // console.log('form data : ', values);
    //make user object
   const  userdata = {
     name: values.username,
@@ -62,7 +62,7 @@ const onSubmit = async (values) => {
     <>
       
       <div className="base-container" ref={props.containerRef}>
-        <div className="header">Register</div>
+        <div className="header">Sign up with News-Recommender</div>
           <div className="content">
             <div className="image">
                 <img src={loginImg}  alt="RegisterImage"/>
@@ -100,7 +100,7 @@ const onSubmit = async (values) => {
                   </div>
                 </div>
                   <div className="footer">
-                    <button type="submit" className="btn">Register</button>
+                    <button type="submit" className="btn">Sign up</button>
                   </div>
               </Form>
           </Formik>

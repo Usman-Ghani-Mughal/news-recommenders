@@ -17,7 +17,7 @@ function World(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getWorldNews = async () =>{
-    console.log("grt world");
+    // console.log("grt world");
     const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/world', { 
         headers:{
           'Accept': 'application/json',
@@ -36,18 +36,18 @@ function World(props) {
         // store data in local
         localStorage.setItem("world_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
-        console.log("======== ok =========");
+        // console.log("======== ok =========");
 
       }
     }) 
       .catch((err) => { 
-        console.log("======== Error ===========");
-        console.log(err) 
+        // console.log("======== Error ===========");
+        // console.log(err) 
     })
   }
 
   useEffect(  () => {
-    console.log("Use Effect");
+    // console.log("Use Effect");
     getWorldNews();
   },[]);
 

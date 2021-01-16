@@ -37,19 +37,19 @@ function Business(props) {
         // store data in local
         localStorage.setItem("business_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
-        console.log("======== ok =========");
+        // console.log("======== ok =========");
 
       }
     }) 
       .catch((err) => { 
-        console.log("======== Error ===========");
-        console.log(err) 
+        // console.log("======== Error ===========");
+        // console.log(err) 
     })
   }
 
 
   useEffect(  () => {
-    console.log("Use Effect");
+    // console.log("Use Effect");
     getBusinessNews();
   },[]);
 

@@ -29,19 +29,20 @@ function CoronaBaner(props){
 
         setResponse_object(response.data);
         chnageDidGetNews(true);
-        console.log("======== ok =========");
+        // console.log("======== ok =========");
 
       }
     }) 
       .catch((err) => { 
-        console.log("======== Error ===========");
-        console.log(err) 
+        // console.log("======== Error ===========");
+        // console.log(err) 
+        
     })
   }
 
 
     useEffect(  () => {
-        console.log("Use Effect");
+        // console.log("Use Effect");
         getCovidData();
     },[]);
 

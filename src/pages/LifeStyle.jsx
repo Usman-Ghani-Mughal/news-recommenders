@@ -17,7 +17,7 @@ function LifeStyle(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getLifeStyleNews = async () =>{
-    console.log("grt latest");
+    // console.log("grt latest");
     const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/lifestyle', { 
         headers:{
           'Accept': 'application/json',
@@ -36,19 +36,19 @@ function LifeStyle(props) {
         // store data in local
         localStorage.setItem("lifestyle_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
-        console.log("========= got data ==========");
+        // console.log("========= got data ==========");
 
       }
     }) 
       .catch((err) => { 
-        console.log("======== Error ===========");
-        console.log(err) 
+        // console.log("======== Error ===========");
+        // console.log(err) 
     })
-    console.log("done latest");
+    // console.log("done latest");
   }
 
   useEffect(  () => {
-      console.log("Use Effect block");
+      // console.log("Use Effect block");
       getLifeStyleNews();
     // let latestnews_t = localStorage.getItem("latest_news");
 

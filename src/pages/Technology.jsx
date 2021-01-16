@@ -35,18 +35,18 @@ function Technology(props) {
         setResponse_object(response.data);
         localStorage.setItem("technology_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
-        console.log("======== ok =========");
+        // console.log("======== ok =========");
 
       }
     }) 
       .catch((err) => { 
-        console.log("======== Error ===========");
-        console.log(err) 
+        // console.log("======== Error ===========");
+        // console.log(err) 
     })
   }
 
   useEffect(  () => {
-    console.log("Use Effect");
+    // console.log("Use Effect");
     getTechnologyNews();
   },[]);
 

@@ -7,7 +7,8 @@
   
     .header {
       font-size: 24px;
-      font-family: "Open Sans", sans-serif;
+      font-family: 'Times New Roman', serif;
+      justify-content: center;
     }
   
     .content {
@@ -15,10 +16,10 @@
       flex-direction: column;
   
       .image {
-        width: 21em;
+        width: 15em;
         img {
-          width: 100%;
-          height: 100%;
+          width: 80%;
+          height: 80%;
         }
       }
   
@@ -91,7 +92,8 @@
     
       .header {
         font-size: 24px;
-        font-family: "Open Sans", sans-serif;
+        font-family: 'Times New Roman', serif;
+        justify-content: center;
       }
     
       .content {
@@ -99,10 +101,10 @@
         flex-direction: column;
     
         .image {
-          width: 19em !important;
+          width: 13em !important;
           img {
-            width: 90% !important;
-            height: 50% !important;
+            width: 70% !important;
+            height: 40% !important;
           }
         }
     
@@ -178,8 +180,9 @@
       flex-wrap: wrap !important;
     
       .header {
-        font-size: 24px;
-        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        font-family: 'Times New Roman', serif;
+        justify-content: center;
       }
     
       .content {
@@ -187,10 +190,10 @@
         flex-direction: column;
     
         .image {
-          width: 12em !important;
+          width: 11em !important;
           img {
-            width: 90% !important;
-            height: 40% !important;
+            width: 60% !important;
+            height: 30% !important;
             margin-bottom: 1px !important;
           }
           

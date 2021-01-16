@@ -20,7 +20,7 @@ function Pakistan(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getPakistanNews = async () =>{
-    console.log("grt pakistan");
+    // console.log("grt pakistan");
     const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/pakistan', { 
         headers:{
           'Accept': 'application/json',
@@ -41,19 +41,19 @@ function Pakistan(props) {
         localStorage.setItem("pakistan_news", JSON.stringify(news_array));
 
         chnageDidGetNews(true);
-        console.log("======== ok =========");
+        // console.log("======== ok =========");
 
       }
     }) 
       .catch((err) => { 
-        console.log("======== Error ===========");
-        console.log(err) 
+        // console.log("======== Error ===========");
+        // console.log(err) 
     })
   }
 
 
   useEffect(  () => {
-    console.log("Use Effect");
+    // console.log("Use Effect");
     getPakistanNews();
   },[]);
 

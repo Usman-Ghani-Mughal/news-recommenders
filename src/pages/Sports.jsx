@@ -18,7 +18,7 @@ function Sports(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getSportstNews = async () =>{
-    console.log("grt sports");
+    // console.log("grt sports");
     const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/sports', { 
         headers:{
           'Accept': 'application/json',
@@ -38,19 +38,19 @@ function Sports(props) {
         // store data in local
         localStorage.setItem("sports_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
-        console.log("======== ok =========");
+        // console.log("======== ok =========");
 
       }
     }) 
       .catch((err) => { 
-        console.log("======== Error ===========");
-        console.log(err) 
+        // console.log("======== Error ===========");
+        // console.log(err) 
     })
   }
 
 
   useEffect(  () => {
-    console.log("Use Effect");
+    // console.log("Use Effect");
     getSportstNews();
   },[]);
 

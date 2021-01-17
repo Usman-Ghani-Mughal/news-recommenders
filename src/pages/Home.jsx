@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import Carousel  from "react-elastic-carousel";
 import axios from 'axios';
 import Card from "../components/Cards/Crad";
-
+import RecommenderCard from "../components/RecomenderCard/RecommenderCard";
+import NewsChanelComponent from "../components/NewsChanels/NewsChanelComponent";
 // // for accessing global store
 // import {useDispatch} from 'react-redux'
 // import {login} from "../actions/loginAction";
@@ -111,6 +112,7 @@ function Home(props) {
     return(
       <>
         <div className="container">
+          <NewsChanelComponent></NewsChanelComponent>
         <div className="world-news">
 
             <div className="row">
@@ -174,8 +176,8 @@ function Home(props) {
             </div>
             
         </div>
+        <RecommenderCard></RecommenderCard>
       </div>
-      
     </>
 
     )

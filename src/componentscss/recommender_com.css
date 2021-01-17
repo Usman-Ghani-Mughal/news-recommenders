@@ -1,0 +1,13 @@
+
+
+.editors-news{
+    margin-top: 20px !important;
+}
+
+.carousel-image img{
+    max-width: 720px !important;
+    max-height: 350px !important;
+
+    min-width: 720px !important;
+    min-height: 300px !important;
+}

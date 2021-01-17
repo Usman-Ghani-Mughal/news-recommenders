@@ -9,12 +9,12 @@ import img_b1 from "../../Images/banner_1.jpg";
 import img_b2 from "../../Images/banner_2.jpg";
 import img_b3 from "../../Images/banner_3.jpg";
 
-import img_p1 from "../../Images/Profile_1.jpg";
-import img_p2 from "../../Images/Profile_2.jpg";
-import img_p3 from "../../Images/Profile_3.jpg";
-import img_p4 from "../../Images/Profile_4.jpg";
-import img_p5 from "../../Images/Profile_5.jpg";
-import img_p6 from "../../Images/Profile_6.jpg";
+import img_p1 from "../../Images/geo1.png";
+import img_p2 from "../../Images/ary1.jpg";
+import img_p3 from "../../Images/Dunya_News.jpg";
+import img_p4 from "../../Images/bol1.jpg";
+import img_p5 from "../../Images/daily_times.jpg";
+import img_p6 from "../../Images/bbc.png";
 
 
 

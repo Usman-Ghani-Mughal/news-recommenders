@@ -112,7 +112,7 @@ function Home(props) {
     return(
       <>
         <div className="container">
-          <NewsChanelComponent></NewsChanelComponent>
+          {/* <NewsChanelComponent></NewsChanelComponent> */}
         <div className="world-news">
 
             <div className="row">
@@ -176,7 +176,7 @@ function Home(props) {
             </div>
             
         </div>
-        <RecommenderCard></RecommenderCard>
+        {/* <RecommenderCard></RecommenderCard> */}
       </div>
     </>
 

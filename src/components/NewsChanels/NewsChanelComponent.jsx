@@ -26,7 +26,7 @@ function NewsChanelComponent(props){
         <>
 
 <div className="row">
-            <div className="col-lg-8 col-md-6">
+            <div className="col-lg-8 col-md-8 col-sm-10 col-12">
               <div className="owl-carousel owl-theme" id="main-banner-carousel">
                   
                 <div className="item">

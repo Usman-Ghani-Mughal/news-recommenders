@@ -65,6 +65,50 @@
   }
 
 
+  @media screen and  (max-width: 770px) {
+    .carousel-image img{
+        max-width: 460px ;
+        min-width: 460px ;
+    
+        max-height: 360px ;
+        min-height: 460px ;
+    }
+
+  }
+
+  @media screen and  (max-width: 475px) {
+    .carousel-image img{
+        max-width: 405px ;
+        min-width: 405px ;
+    
+        max-height: 360px ;
+        min-height: 460px ;
+    }
+
+  }
+
+  @media screen and  (max-width: 410px) {
+    .carousel-image img{
+        max-width: 350px ;
+        min-width: 350px ;
+    
+        max-height: 360px ;
+        min-height: 460px ;
+    }
+
+  }
+  @media screen and  (max-width: 363px) {
+    .carousel-image img{
+        max-width: 300px ;
+        min-width: 300px ;
+    
+        max-height: 300px ;
+        min-height: 330px ;
+    }
+
+  }
+
+
 /* 
   @media screen and  (min-width: 1000px) {
 

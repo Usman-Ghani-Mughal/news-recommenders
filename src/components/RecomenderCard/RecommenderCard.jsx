@@ -27,87 +27,101 @@ function RecommenderCard(props){
 
         <div className="row">
         <div className="col-lg-6  mb-5 mb-sm-2">
-            <div className="position-relative image-hover">
+            <div className="position-relative image-hover down_main_image">
             <img
-                src={"https://img.dunyanews.tv/news/2021/January/01-16-21/news_big_images/583356_40827545.jpg1"}
+                src={props.new_2345[1].ImagePath}
                 className="img-fluid"
                 alt="world-news"
             />
-            <span className="thumb-title">TECHNOLOGY</span>
+            <span className="thumb-title">{props.new_2345[1].Label}</span>
             </div>
             <h1 className="font-weight-600 mt-3">
-            Google Play is unsportsmanlike, U.S. states likely to argue in potential lawsuit
+            {/* Google Play is unsportsmanlike, U.S. states likely to argue in potential lawsuit */}
+            {props.new_2345[1].News_heading}
             </h1>
             <p className="fs-15 font-weight-normal">
-            WASHINGTON (Reuters) - State attorneys general are planning a third lawsuit against Alphabet Inc’s Google, this...
+            {/* WASHINGTON (Reuters) - State attorneys general are planning a third lawsuit against Alphabet Inc’s Google, this... */}
+            {props.new_2345[1].News_details}
             </p>
         </div>
+
+        
         <div className="col-lg-6  mb-5 mb-sm-2">
             <div className="row">
             <div className="col-sm-6  mb-5 mb-sm-2">
-                <div className="position-relative image-hover">
+                <div className="position-relative image-hover down_other_images">
                 <img
-                    src={"https://bolnews.s3.amazonaws.com/wp-content/uploads/2021/01/as-76-539x308.jpg"}
+                    src={props.new_2345[2].ImagePath}
                     className="img-fluid"
                     alt="world-news"
                 />
-                <span className="thumb-title">Pakistan</span>
+                {/* <span className="thumb-title">{props.new_2345[2].Label}</span> */}
                 </div>
                 <h5 className="font-weight-600 mt-3">
-                Quetta: 4 Injured In Blast On Sariab Road
+                {/* Quetta: 4 Injured In Blast On Sariab Road */}
+                {props.new_2345[2].News_heading}
                 </h5>
                 <p className="fs-15 font-weight-normal">
-                our people were injured in an explosion on Sariab Road in Quetta. 
+                {/* our people were injured in an explosion on Sariab Road in Quetta.  */}
+                {props.new_2345[2].News_details}
                 </p>
             </div>
+
             <div className="col-sm-6  mb-5 mb-sm-2">
-                <div className="position-relative image-hover">
+                <div className="position-relative image-hover down_other_images">
                 <img
-                    src={"https://bolnews.s3.amazonaws.com/wp-content/uploads/2021/01/as-74-539x308.jpg"}
+                    src={props.new_2345[3].ImagePath}
                     className="img-fluid"
                     alt="world-news"
                 />
-                <span className="thumb-title">Health</span>
+                {/* <span className="thumb-title">{props.new_2345[3].Label}</span> */}
                 </div>
                 <h5 className="font-weight-600 mt-3">
-                Beetroot Raita: Carve Your Cravings With This Side Dish
+                {/* Beetroot Raita: Carve Your Cravings With This Side Dish */}
+                {props.new_2345[3].News_heading}
                 </h5>
                 <p className="fs-15 font-weight-normal">
-                The use of beetroot is very common in the subcontinent
+                {/* The use of beetroot is very common in the subcontinent */}
+                {props.new_2345[3].News_details}
                 </p>
             </div>
             </div>
+
             <div className="row mt-3">
             <div className="col-sm-6  mb-5 mb-sm-2">
-                <div className="position-relative image-hover">
+                <div className="position-relative image-hover down_other_images">
                 <img
-                    src={"https://www.geo.tv/assets/uploads/updates/2021-01-16/l_330294_110150_updates.jpg"}
+                    src={props.new_2345[4].ImagePath}
                     className="img-fluid"
                     alt="world-news"
                 />
-                <span className="thumb-title">Pakistan</span>
+                {/* <span className="thumb-title">{props.new_2345[4].Label}</span> */}
                 </div>
                 <h5 className="font-weight-600 mt-3">
-                PIA to appear before London, Malaysian courts over lease payment issue: aviation minister
+                {/* PIA to appear before London, Malaysian courts over lease payment issue: aviation minister */}
+                {props.new_2345[4].News_heading}
                 </h5>
                 <p className="fs-15 font-weight-normal">
-                PIA officials will appear before a London court on January 22 and before a Malaysian court on January 24
-                                </p>
+                {/* PIA officials will appear before a London court on January 22 and before a Malaysian court on January 24 */}
+                    {props.new_2345[4].News_details}
+                </p>
             </div>
             <div className="col-sm-6">
-                <div className="position-relative image-hover">
+                <div className="position-relative image-hover down_other_images">
                 <img
-                    src={"https://www.geo.tv/assets/uploads/updates/2021-01-16/l_330243_034426_updates.jpg"}
+                    src={props.new_2345[5].ImagePath}
                     className="img-fluid"
                     alt="world-news"
                 />
-                <span className="thumb-title">Sports</span>
+                {/* <span className="thumb-title">{props.new_2345[5].Label}</span> */}
                 </div>
                 <h5 className="font-weight-600 mt-3">
-                New Pakistan chief selector introduces data-based criteria
+                {/* New Pakistan chief selector introduces data-based criteria */}
+                    {props.new_2345[5].News_heading}
                 </h5>
                 <p className="fs-15 font-weight-normal">
-                Team announcement for South Africa series was unprecedented in many ways 
+                {/* Team announcement for South Africa series was unprecedented in many ways  */}
+                    {props.new_2345[5].News_details}
                 </p>
             </div>
             </div>

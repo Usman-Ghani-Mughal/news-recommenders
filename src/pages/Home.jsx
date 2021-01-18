@@ -21,7 +21,10 @@ const breakPoints = [
 function Home(props) {
   // get data from Local storage
   let udata = localStorage.getItem('userloginInfo');
+
   udata = JSON.parse(udata);
+  
+  let user_name_l = udata.username;
   let temp_array = udata.userinterests.split(",")
   let I0 = temp_array[0];
   let I1 = temp_array[1];
@@ -29,6 +32,7 @@ function Home(props) {
   let I0_Array = [];
   let I1_Array = [];
   let I2_Array = [];
+  let I3_Array = [];
 
   let number_cols = "col-lg-12 col-sm-12 h-100 pl-2 pt-2 pb-2 pr-2 mr-2 ml-2"
 
@@ -46,9 +50,10 @@ function Home(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   const  getRecomendedNews = async () =>{
+    
     // console.log("grt home");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/recomendedNews', { 
-        params: { userinterests: udata.userinterests },
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/python/userrecommendednews', { 
+        params: { userinterests: udata.userinterests, name:  user_name_l},
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -78,6 +83,14 @@ function Home(props) {
           seti2array(I2_Array);
           localStorage.setItem('I2_Array_l', JSON.stringify(I2_Array));
 
+          I3_Array = response.data.NewsArray1;
+          I3_Array = I3_Array.reverse();
+          
+          localStorage.setItem('I3_Array_l', JSON.stringify(I3_Array));
+
+          console.log("We have got all response");
+          console.log(response.data)
+
         setResponse_object(response.data);
         chnageDidGetNews(true);
         // console.log("======== ok =========");
@@ -85,8 +98,8 @@ function Home(props) {
       }
     }) 
       .catch((err) => { 
-        // console.log("======== Error ===========");
-        // console.log(err) 
+        console.log("======== Error ===========");
+        console.log(err) 
     })
   }
 
@@ -100,19 +113,21 @@ function Home(props) {
   let a_0 = localStorage.getItem('I0_Array_l');
   let a_1 = localStorage.getItem('I1_Array_l');
   let a_2 = localStorage.getItem('I2_Array_l');
+  let a_3 = localStorage.getItem('I3_Array_l');
 
 
-  if(a_0 && a_1 && a_2){
+  if(a_0 && a_1 && a_2 && a_3){
 
     a_0 = JSON.parse(a_0);
     a_1 = JSON.parse(a_1);
     a_2 = JSON.parse(a_2);
+    a_3 = JSON.parse(a_3);
     
     
     return(
       <>
         <div className="container">
-          {/* <NewsChanelComponent></NewsChanelComponent> */}
+          <NewsChanelComponent news_1={a_3[0]}></NewsChanelComponent>
         <div className="world-news">
 
             <div className="row">
@@ -176,7 +191,7 @@ function Home(props) {
             </div>
             
         </div>
-        {/* <RecommenderCard></RecommenderCard> */}
+        <RecommenderCard new_2345={a_3}></RecommenderCard>
       </div>
     </>
 
@@ -187,6 +202,7 @@ function Home(props) {
       return (
       <>
         <div className="container">
+        <NewsChanelComponent news_1={a_3[0]}></NewsChanelComponent>
         <div className="world-news">
 
             <div className="row">
@@ -250,6 +266,7 @@ function Home(props) {
             </div>
             
         </div>
+        <RecommenderCard new_2345={a_3}></RecommenderCard>
       </div>
       
     </>

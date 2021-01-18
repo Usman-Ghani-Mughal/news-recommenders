@@ -43,6 +43,12 @@ import LifeStyle from "./pages/LifeStyle";
 import Offbeat from "./pages/Offbeat";
 import SCITECH from "./pages/SCITECH";
 
+import Geo from "./pages/Geo";
+import Ary from "./pages/Ary";
+import Dunya from "./pages/Dunya";
+import Bol from "./pages/Bol";
+import DailyTimes from "./pages/DailyTimes";
+
 
 // for accessing global store
 import {useSelector, useDispatch} from 'react-redux'
@@ -326,12 +332,18 @@ const registeringFromGoogle =  async (decision) => {
           <Route exact path="/technology" component= {Technology}></Route>
           <Route exact path="/sports" component= {Sports}></Route>
           <Route exact path="/business" component= {Business}></Route>
-
           <Route exact path="/lifestyle" component= {LifeStyle}></Route>
           <Route exact path="/health" component= {Health}></Route>
           <Route exact path="/scitech" component= {SCITECH}></Route>
           <Route exact path="/offbeat" component= {Offbeat}></Route>
           <Route exact path="/entertainment" component= {Entertainment}></Route>
+
+
+          <Route exact path="/geo" component= {Geo}></Route>
+          <Route exact path="/ary" component= {Ary}></Route>
+          <Route exact path="/dunya" component= {Dunya}></Route>
+          <Route exact path="/bol" component= {Bol}></Route>
+          <Route exact path="/dailytimes" component= {DailyTimes}></Route>
 
           {/* <Route exact path="/entertainment" component= {Entertainment}></Route> */}
           <Route exact path="/about" component= {About}></Route>

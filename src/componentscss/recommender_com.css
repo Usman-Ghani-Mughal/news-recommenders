@@ -113,6 +113,11 @@
       
   }
 
+  .thumb-title:hover{
+    background-color: #3E8177 !important;
+  }
+  
+
 
 /* 
   @media screen and  (min-width: 1000px) {

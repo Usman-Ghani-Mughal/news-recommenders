@@ -108,6 +108,10 @@
 
   }
 
+  #main-banner-carousel{
+      color: black !important;
+  }
+
 
 /* 
   @media screen and  (min-width: 1000px) {

@@ -1,10 +1,20 @@
 import React from "react";
+import axios from 'axios';
 
 // // for accessing global store
 // import {useDispatch} from 'react-redux'
 // import {login} from "../actions/loginAction";
 
+
+
+
 function Contact(props) {
+
+  const registerQuery = () => {
+    
+    alert("Thanks for contact us our team will entertain your query soon");
+  }
+
 
 
   return (
@@ -81,7 +91,7 @@ function Contact(props) {
                 <div className="row">
                   <div className="col-sm-12">
                     <div className="form-group">
-                      <a href="#" className="btn btn-lg btn-dark font-weight-bold"
+                      <a onClick={registerQuery} href="#" className="btn btn-lg btn-dark font-weight-bold"
                         >Submit</a
                       >
                     </div>

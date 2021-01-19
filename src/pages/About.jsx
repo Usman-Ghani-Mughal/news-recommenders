@@ -17,8 +17,8 @@ function About(props) {
                 About Us
               </h1>
               <p className="text-secondary fs-15 mb-5 pb-3">
-                This text can be added in the category Description field in
-                dashboard
+                News Recommender is news platform which provides news of multiple news providers
+                on a single platform based on users' preferences. It provides users both local and internaltion news.
               </p>
             </div>
           </div>
@@ -40,15 +40,15 @@ function About(props) {
                   <h1>OUR MISSION</h1>
                   <p className="mb-3">WHY CHOOSE US</p>
                   <p className="mb-4">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                    irure dolor reprehenderit in voluptate velit esse cillum
-                    dolore eu fugiat nulla pariatur.
+                    News Recommender is platform where users can see news of multiple 
+                    news providers so now users do not have to vist different sources 
+                    while they are getting all news on single platform. We provided
+                    latest news based on user interest so now user can stay update with
+                    things which they likes.
                   </p>
                   <p className="mb-4">
-                    Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum. Sed
-                    ut perspiciatis unde omnis.
+                      News Recommender is providing news both local and internaltion news
+                      from top news providers in Pakistan and world. 
                   </p>
                   <p className="fs-15 font-weight-600">
                     VIEW MORE INFORMATION

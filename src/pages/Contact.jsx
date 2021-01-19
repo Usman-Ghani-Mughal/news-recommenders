@@ -17,8 +17,8 @@ function Contact(props) {
                 Contact Us
               </h1>
               <p className="text-secondary fs-15 mb-5 pb-3">
-                This text can be added in the category Description field in
-                dashboard
+                Our users can conatct us here and submit their application
+                so our team can resolve their queires.
               </p>
             </div>
           </div>
@@ -95,8 +95,8 @@ function Contact(props) {
                   <div className="col-sm-12  mb-2 mb-lg-2">
                     <h1>GET IN TOUCH</h1>
                     <p className="mb-4 fs-15">
-                      This text can be added in the category Description field
-                      in dashboard
+                      User can vist our office during office ours
+                      we have offices in multiple cities our head office is in Islamabad
                     </p>
                     <p className="mb-0 font-weight-bold fs-14">
                       ADDRESS

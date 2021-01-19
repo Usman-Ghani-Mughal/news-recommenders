@@ -28,15 +28,15 @@ function NewsChanelComponent(props){
 <div className="row">
             <div className="col-lg-8 col-md-8 col-sm-10 col-12">
               <div className="owl-carousel owl-theme" id="main-banner-carousel">
-                  
+                <a rel={'external'}  href={"https://"+props.news_1.Link}>
                 <div className="item">
                   <div className="carousel-content-wrapper mb-2">
                     <div className="carousel-content">
-                      <h1 className="font-weight-bold">
+                      <h1 className="font-weight-bold news_heading1">
                         {props.news_1.News_heading}
                       {/* Rooney's Derby beaten, Norwich surge seven clear */}
                       </h1>
-                      <h5 className="font-weight-normal  m-0">
+                      <h5 className="font-weight-normal  m-0 news_heading1">
                       {/* Wayne Rooney suffered defeat in his first match in permanent charge of Derby as relegation rivals Rotherham won 1-0 at Pride Park and No... */}
                           {props.news_1.News_details}
                       </h5>
@@ -50,6 +50,7 @@ function NewsChanelComponent(props){
                     </div>
                   </div>
                 </div>
+                </a>
 
                 
                   

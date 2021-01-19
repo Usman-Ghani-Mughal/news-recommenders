@@ -108,8 +108,10 @@
 
   }
 
-  #main-banner-carousel{
+  .news_heading1{
       color: black !important;
+      font-weight: bolder !important;
+      
   }
 
 

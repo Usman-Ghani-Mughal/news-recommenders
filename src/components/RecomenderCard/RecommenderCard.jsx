@@ -26,7 +26,9 @@ function RecommenderCard(props){
         </div>
 
         <div className="row">
+        
         <div className="col-lg-6  mb-5 mb-sm-2">
+        <a rel={'external'}  href={"https://"+props.new_2345[1].Link}>
             <div className="position-relative image-hover down_main_image">
             <img
                 src={props.new_2345[1].ImagePath}
@@ -35,6 +37,7 @@ function RecommenderCard(props){
             />
             <span className="thumb-title">{props.new_2345[1].Label}</span>
             </div>
+            </a>
             <h1 className="font-weight-600 mt-3">
             {/* Google Play is unsportsmanlike, U.S. states likely to argue in potential lawsuit */}
             {props.new_2345[1].News_heading}
@@ -43,12 +46,16 @@ function RecommenderCard(props){
             {/* WASHINGTON (Reuters) - State attorneys general are planning a third lawsuit against Alphabet Inc’s Google, this... */}
             {props.new_2345[1].News_details}
             </p>
+        
         </div>
+        
 
         
         <div className="col-lg-6  mb-5 mb-sm-2">
             <div className="row">
+            
             <div className="col-sm-6  mb-5 mb-sm-2">
+            <a rel={'external'}  href={"https://"+props.new_2345[2].Link}>
                 <div className="position-relative image-hover down_other_images">
                 <img
                     src={props.new_2345[2].ImagePath}
@@ -57,6 +64,7 @@ function RecommenderCard(props){
                 />
                 {/* <span className="thumb-title">{props.new_2345[2].Label}</span> */}
                 </div>
+            </a>
                 <h5 className="font-weight-600 mt-3">
                 {/* Quetta: 4 Injured In Blast On Sariab Road */}
                 {props.new_2345[2].News_heading}
@@ -66,8 +74,10 @@ function RecommenderCard(props){
                 {props.new_2345[2].News_details}
                 </p>
             </div>
+            
 
             <div className="col-sm-6  mb-5 mb-sm-2">
+            <a rel={'external'}  href={"https://"+props.new_2345[3].Link}>
                 <div className="position-relative image-hover down_other_images">
                 <img
                     src={props.new_2345[3].ImagePath}
@@ -76,6 +86,7 @@ function RecommenderCard(props){
                 />
                 {/* <span className="thumb-title">{props.new_2345[3].Label}</span> */}
                 </div>
+            </a>
                 <h5 className="font-weight-600 mt-3">
                 {/* Beetroot Raita: Carve Your Cravings With This Side Dish */}
                 {props.new_2345[3].News_heading}
@@ -88,7 +99,9 @@ function RecommenderCard(props){
             </div>
 
             <div className="row mt-3">
+            
             <div className="col-sm-6  mb-5 mb-sm-2">
+            <a rel={'external'}  href={"https://"+props.new_2345[4].Link}>
                 <div className="position-relative image-hover down_other_images">
                 <img
                     src={props.new_2345[4].ImagePath}
@@ -97,6 +110,7 @@ function RecommenderCard(props){
                 />
                 {/* <span className="thumb-title">{props.new_2345[4].Label}</span> */}
                 </div>
+            </a>
                 <h5 className="font-weight-600 mt-3">
                 {/* PIA to appear before London, Malaysian courts over lease payment issue: aviation minister */}
                 {props.new_2345[4].News_heading}
@@ -107,6 +121,7 @@ function RecommenderCard(props){
                 </p>
             </div>
             <div className="col-sm-6">
+            <a rel={'external'}  href={"https://"+props.new_2345[5].Link}>
                 <div className="position-relative image-hover down_other_images">
                 <img
                     src={props.new_2345[5].ImagePath}
@@ -115,6 +130,7 @@ function RecommenderCard(props){
                 />
                 {/* <span className="thumb-title">{props.new_2345[5].Label}</span> */}
                 </div>
+            </a>
                 <h5 className="font-weight-600 mt-3">
                 {/* New Pakistan chief selector introduces data-based criteria */}
                     {props.new_2345[5].News_heading}

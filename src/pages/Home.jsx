@@ -5,6 +5,8 @@ import axios from 'axios';
 import Card from "../components/Cards/Crad";
 import RecommenderCard from "../components/RecomenderCard/RecommenderCard";
 import NewsChanelComponent from "../components/NewsChanels/NewsChanelComponent";
+import LoadingAnimation from "../components/loadingAnimation/LoadingAnimation";
+import "../componentscss/loadingAnimationcss.css";
 // // for accessing global store
 // import {useDispatch} from 'react-redux'
 // import {login} from "../actions/loginAction";
@@ -201,6 +203,7 @@ function Home(props) {
   else if(didgetNews){
       return (
       <>
+        
         <div className="container">
         <NewsChanelComponent news_1={a_3[0]}></NewsChanelComponent>
         <div className="world-news">
@@ -274,8 +277,17 @@ function Home(props) {
 
   }
   else{
+
+    var type = "bars";
+    var color = "#3E8177";
+    var height = "5%";
+    var width = '5%';
+
       return(
-        <div></div>
+        <>
+        <h1 className="helper_anamation"> ... </h1>
+        <LoadingAnimation type={type} color={color} height={height} width={width} ></LoadingAnimation>
+        </>
       )
   }
 }

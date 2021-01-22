@@ -1,0 +1,9 @@
+.loadin_animataions{
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .helper_anamation{
+      color: #FFFFFF !important;
+  }

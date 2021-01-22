@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Card from "../components/Cards/Crad";
 
-
+import LoadingAnimation from "../components/loadingAnimation/LoadingAnimation";
+import "../componentscss/loadingAnimationcss.css";
 
 // // for accessing global store
 // import {useDispatch} from 'react-redux'
@@ -131,13 +132,17 @@ function Pakistan(props) {
       </>
     )
   }else{
-    return (
-      <>
-        <div >
-          
-        </div>
-      </>
-    );
+    var type = "bars";
+    var color = "#3E8177";
+    var height = "5%";
+    var width = '5%';
+
+      return(
+        <>
+        <h1 className="helper_anamation"> ... </h1>
+        <LoadingAnimation type={type} color={color} height={height} width={width} ></LoadingAnimation>
+        </>
+      );
   }
 }
 

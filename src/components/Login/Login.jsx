@@ -2,6 +2,7 @@ import React from "react";
 import axios from 'axios';
 import loginImg from "../../Images/contact.png";
 import GoogleLogin from "react-google-login";
+import swal from 'sweetalert';
 
 
 export class Login extends React.Component {
@@ -75,7 +76,9 @@ export class Login extends React.Component {
       }else if(response.data.success === -1){
         // console.log("in response is -1");
         // some error while checking
-        alert(response.description);
+        // alert(response.description);
+        swal("News Recommender", response.description, "error");
+
       }else{
         // console.log("in response is 0");
         // user is already register lets login him
@@ -88,19 +91,21 @@ export class Login extends React.Component {
       }
     }).catch(err =>{
       // console.log(err);
-      alert(err);
+      //alert(err);
+      swal("News Recommender", err, "error");
     });
     
   } catch (err) {
     // console.log(err);
-    alert(err);
+    //alert(err);
+    swal("News Recommender", err, "error");
   }
 
 
   }
 
   googleNotSuccess = (response) => {
-    console.log(response);
+    //console.log(response);
   }
 
   render() {

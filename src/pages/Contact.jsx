@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import swal from 'sweetalert';
 
 // // for accessing global store
 // import {useDispatch} from 'react-redux'
@@ -12,7 +13,9 @@ function Contact(props) {
 
   const registerQuery = () => {
     
-    alert("Thanks for contact us our team will entertain your query soon");
+    //alert("Thanks for contact us our team will entertain your query soon");
+    swal("News Recommender", "Thanks for contact us our team will entertain your query soon", "info");
+
   }
 
 

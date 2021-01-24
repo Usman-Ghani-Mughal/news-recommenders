@@ -348,7 +348,6 @@ const registeringFromGoogle =  async (decision) => {
           <Route exact path="/offbeat" component= {Offbeat}></Route>
           <Route exact path="/entertainment" component= {Entertainment}></Route>
 
-
           <Route exact path="/geo" component= {Geo}></Route>
           <Route exact path="/ary" component= {Ary}></Route>
           <Route exact path="/dunya" component= {Dunya}></Route>

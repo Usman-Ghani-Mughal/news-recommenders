@@ -52,7 +52,6 @@ function Ary(props) {
   }
 
   useEffect(  () => {
-      // console.log("Use Effect block");
       getAryNews();
     // let latestnews_t = localStorage.getItem("latest_news");
 

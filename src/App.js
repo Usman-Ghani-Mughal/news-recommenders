@@ -165,6 +165,7 @@ function App()
 
    } catch (err) {
     // console.log(err);
+    swal("News Recommender", err, "error");
    }
 
  }
@@ -381,62 +382,3 @@ const registeringFromGoogle =  async (decision) => {
 
 
   export default App;
-
-  // const updateCategories = (category) => {
-  //   console.log('update called');
-  //   var temp = categories;
-  //   temp =  temp + category+",";
-  //   console.log(temp);
-  //   chnageCategories({categories : temp});
-  //   console.log("done");
-  // }
-
-//   return (
-//     <div className="App"> 
-//         <Uiheader></Uiheader>
-//         <Getuserintersts cat_selected={cat_selected} chnageCatSelected={chnageCatSelected} updateCategories={updateCategories}> </Getuserintersts>
-//         <Footer categories={categories}></Footer>
-//       </div>
-
-//   );
-// }
-
-// class App extends React.Component{
-//     constructor(){
-//       super()
-//       this.state = {
-//         cat_selected : true,
-//         categories: "",
-//         test:true 
-//       }
-//       this.addCategories = this.addCategories.bind(this);
-//       this.removeCategories = this.removeCategories.bind(this);
-//       this.allowSubmit = this.allowSubmit.bind(this);
-
-    //   // const wehaveinterst = useSelector(state => state.haveInterestsReducer);
-    // }
-
-  // render()
-  // {
-    
-  //   if(this.wehaveinterst)
-  //   {
-  //     return(
-  //       <h1>I already Gave you the interest bro!</h1>
-  //     )
-  //   }
-  //   else
-  //   {
-  //     return(
-  //       <div className="App"> 
-  //           <Uiheader cat_selected={this.state.cat_selected}></Uiheader>
-  //           <Getuserintersts  addCategories={this.addCategories} removeCategories={this.removeCategories} allowSubmit={this.allowSubmit}></Getuserintersts>
-  //           <Footer categories={this.state.categories}></Footer>
-  //     </div>
-  //     )
-  //   }
-  // }
-
-  // used to add categories
-  
-// }

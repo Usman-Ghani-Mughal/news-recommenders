@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 // used for routes
 import { Switch, Route, Redirect, Router} from "react-router-dom";
 import axios from 'axios';
+import swal from 'sweetalert';
 
 // import bootstrap
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -151,12 +152,15 @@ function App()
           localStorage.setItem('userlogin', response.data.success);
           localStorage.setItem('userloginInfo', JSON.stringify(userLogin_info));
           dispatch(login(true));
+          //swal("News Recommender", "Welcome: "+ name +"\nYou are Login successfully", "success");
         }else{
-          alert(response.data.description);
+          //alert(response.data.description);
+          swal("News Recommender", response.data.description, "error");
         }
     }).catch(err => {
       // console.log("************ Error ***********");
-      alert("Invalid username or password");
+     // alert("Invalid username or password");
+      swal("News Recommender", "Invalid username or password", "error");
     });
 
    } catch (err) {
@@ -201,20 +205,25 @@ function App()
      }
     }).then((response) => {
       if(response.data.success){
-        alert('User is register succesfully');
+        // alert('User is register succesfully');
+        swal("News Recommender", "Welcome: "+ username_req +"\nYou are register successfully", "success");
       }else{
-        alert(response.data.description);
+
+        // alert(response.data.description);
+        swal("News Recommender", response.data.description, "error");
         localStorage.clear();
       }
     }).catch(err =>{
       // console.log(err);
-      alert(err);
+      // alert(err);
+      swal("News Recommender", err, "error");
       localStorage.clear();
     });
     
   } catch (err) {
     // console.log(err);
-    alert(err);
+    // alert(err);
+    swal("News Recommender", err, "error");
     localStorage.clear();
   }
 }

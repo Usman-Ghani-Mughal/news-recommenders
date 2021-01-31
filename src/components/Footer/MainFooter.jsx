@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import logo_img from "../../Images/logo7.jpeg";
 
@@ -99,13 +99,13 @@ function MainFooter(props) {
                   className="d-lg-flex justify-content-between align-items-center border-top mt-5 footer-bottom"
                 >
                   <ul className="footer-horizontal-menu">
-                    <li><a href="#">Terms of Use.</a></li>
-                    <li><a href="#">Privacy Policy.</a></li>
-                    <li><a href="#">Accessibility & CC.</a></li>
-                    <li><a href="#">AdChoices.</a></li>
-                    <li><a href="#">Advertise with us Transcripts.</a></li>
-                    <li><a href="#">License.</a></li>
-                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="/">Terms of Use.</a></li>
+                    <li><a href="/">Privacy Policy.</a></li>
+                    <li><a href="/">Accessibility & CC.</a></li>
+                    <li><a href="/">AdChoices.</a></li>
+                    <li><a href="/">Advertise with us Transcripts.</a></li>
+                    <li><a href="/">License.</a></li>
+                    <li><a href="/">Sitemap</a></li>
                   </ul>
                   <p className="font-weight-medium">
                     © 2020-2021 <a href="/" target="_blank" className="text-dark">News Recommenders</a>, ZU-Team.

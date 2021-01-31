@@ -3,29 +3,21 @@ import { NavLink } from "react-router-dom";
 import '../../componentscss/recommender_com.css';
 // import "../../componentscss/owl.theme.default.min.css";
 
-
-import img_b from "../../Images/banner.jpg";
-import img_b1 from "../../Images/banner_1.jpg";
-import img_b2 from "../../Images/banner_2.jpg";
-import img_b3 from "../../Images/banner_3.jpg";
-
-import img_p1 from "../../Images/geo1.png";
-import img_p2 from "../../Images/ary1.jpg";
-import img_p3 from "../../Images/Dunya_News.jpg";
-import img_p4 from "../../Images/bol1.jpg";
-import img_p5 from "../../Images/daily_times.jpg";
-import img_p6 from "../../Images/bbc.png";
+import img_geo from "../../Images/geo1.png";
+import img_ary from "../../Images/ary1.jpg";
+import img_dunya from "../../Images/Dunya_News.jpg";
+import img_bol from "../../Images/bol1.jpg";
+import img_daily from "../../Images/daily_times.jpg";
+import img_bbc from "../../Images/bbc.png";
 
 
 
 
 function NewsChanelComponent(props){
-    
-
     return (
         <>
 
-<div className="row">
+          <div className="row">
             <div className="col-lg-8 col-md-8 col-sm-10 col-12">
               <div className="owl-carousel owl-theme" id="main-banner-carousel">
                 <a rel={'external'}  href={"https://"+props.news_1.Link}>
@@ -34,10 +26,8 @@ function NewsChanelComponent(props){
                     <div className="carousel-content">
                       <h1 className="font-weight-bold news_heading1">
                         {props.news_1.News_heading}
-                      {/* Rooney's Derby beaten, Norwich surge seven clear */}
                       </h1>
                       <h5 className="font-weight-normal  m-0 news_heading1">
-                      {/* Wayne Rooney suffered defeat in his first match in permanent charge of Derby as relegation rivals Rotherham won 1-0 at Pride Park and No... */}
                           {props.news_1.News_details}
                       </h5>
                       <p className="text-color m-0 pt-2 d-flex align-items-center">
@@ -62,7 +52,7 @@ function NewsChanelComponent(props){
                   <div className="py-3 border-bottom">
                     <div className="d-flex align-items-center pb-2">
                       <img
-                        src={img_p1}
+                        src={img_geo}
                         className="img-xs img-rounded mr-2"
                         alt="thumb"
                       />
@@ -77,7 +67,7 @@ function NewsChanelComponent(props){
                   <div className="py-3 border-bottom">
                     <div className="d-flex align-items-center pb-2">
                       <img
-                        src={img_p2}
+                        src={img_ary}
                         className="img-xs img-rounded mr-2"
                         alt="thumb"
                       />
@@ -94,7 +84,7 @@ function NewsChanelComponent(props){
                   <div className="pt-4 pb-4 border-bottom">
                     <div className="d-flex align-items-center pb-2">
                       <img
-                        src={img_p3}
+                        src={img_dunya}
                         className="img-xs img-rounded mr-2"
                         alt="thumb"
                       />
@@ -109,7 +99,7 @@ function NewsChanelComponent(props){
                   <div className="pt-3 pb-4 border-bottom">
                     <div className="d-flex align-items-center pb-2">
                       <img
-                        src={img_p4}
+                        src={img_bol}
                         className="img-xs img-rounded mr-2"
                         alt="thumb"
                       />
@@ -127,7 +117,7 @@ function NewsChanelComponent(props){
                   <div className="pt-4 pb-4">
                     <div className="d-flex align-items-center pb-2">
                       <img
-                        src={img_p5}
+                        src={img_daily}
                         className="img-xs img-rounded mr-2"
                         alt="thumb"
                       />
@@ -142,7 +132,7 @@ function NewsChanelComponent(props){
                   <div className="pt-3 pb-4">
                     <div className="d-flex align-items-center pb-2">
                       <img
-                        src={img_p6}
+                        src={img_bbc}
                         className="img-xs img-rounded mr-2"
                         alt="thumb"
                       />

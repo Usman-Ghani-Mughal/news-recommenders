@@ -17,7 +17,8 @@ export class Login extends React.Component {
   }
 
   submitData = () => {
-    // validate the data
+    // validate the data (We have not validate yet on Login)
+
     //make user object
       const  userdata = {
       name: this.state.name,
@@ -27,11 +28,6 @@ export class Login extends React.Component {
   }
 
   googleSuccess = async (response) => {
-    // console.log("google success");
-    // console.log(response);
-    // console.log(response.profileObj.email);
-    // console.log(response.profileObj.name);
-
     let g_email = response.profileObj.email;
     let g_name = response.profileObj.name;
     let g_password = response.profileObj.name + response.profileObj.email;
@@ -40,7 +36,7 @@ export class Login extends React.Component {
     // now we have data, from here we will make request.
   try {
 
-    // making request
+    // making request to check if user is already register or not.
     await axios({
       method: 'post',
       url: 'https://damp-brushlands-70035.herokuapp.com/newsapi/user/alreadyRegister',
@@ -58,30 +54,27 @@ export class Login extends React.Component {
         'auth-token': ' eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQwZGFjYmE4NGQ3NzZlNDg2NTBjZjciLCJpYXQiOjE2MDc1ODU0NzZ9.7ZNuggciEK7p9EtmBJESVQJtLIbCl_uVc3G-tyk3qVo',
      }
     }).then( async (response) => {
-      // console.log("in response");
       if(response.data.success){
-        // console.log("in response is 1");
-        // user is not register before we can ask him for interest and then login.
+        // user is not register before lets register him.
+
+        // make user
         const userdata = {
           name: g_name,
           email: g_email,
            password: g_password,
         }
+
         this.props.setDataGlobal(userdata);
         this.props.changeState();
+        // register user.
         await this.props.registeringFromGoogle(true);
         this.props.userRegistring(true);
-        // till here we have the user name and email
-
       }else if(response.data.success === -1){
-        // console.log("in response is -1");
         // some error while checking
-        // alert(response.description);
         swal("News Recommender", response.description, "error");
-
       }else{
-        // console.log("in response is 0");
         // user is already register lets login him
+
         const  userdata = {
           name: g_name,
           password: g_password,
@@ -90,22 +83,18 @@ export class Login extends React.Component {
         this.props.userLogin(userdata);
       }
     }).catch(err =>{
-      // console.log(err);
-      //alert(err);
+      // Some Error While checking user.
       swal("News Recommender", err, "error");
     });
     
-  } catch (err) {
-    // console.log(err);
-    //alert(err);
-    swal("News Recommender", err, "error");
-  }
-
-
-  }
+  } catch (err) { 
+      swal("News Recommender", err, "error");
+    }
+}
 
   googleNotSuccess = (response) => {
-    //console.log(response);
+    // Some Error From google
+    swal("News Recommender", "Some Error from Google.", "error");
   }
 
   render() {

@@ -1,6 +1,4 @@
 import React from 'react'
-// import img1 from "../../Images/travel.jpg";
-import { Link } from "react-router-dom";
 import "../../componentscss/card.css";
 
 

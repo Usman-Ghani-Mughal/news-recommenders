@@ -1,15 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-
-// // for accessing global store
-// import {useDispatch} from 'react-redux'
-// import {login} from "../actions/loginAction";
-
 const activeStyle = {
     color: "#3E8177",
 } 
-
 
 function NavBar(props) {
 
@@ -74,8 +68,6 @@ function NavBar(props) {
                         </ul>
 
                     </div>
-
-                    
                 </nav>
             </div>
         </div>

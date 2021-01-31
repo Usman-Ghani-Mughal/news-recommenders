@@ -1,63 +1,39 @@
-import React, {useState} from 'react'
+import React from 'react'
 import loginImg from "../../Images/contact.png";
 
-
-// import * as yup from 'yup';
+// Imports from Data validation.
 import { regSchema } from "../../Validations/RegisterValidation";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+
 // Import comonents
 import ErrorText from "../Errormessages/ErrorText";
 
-
-// // previous submit
-// const saveUserTOSTore = async () => {
-//   // // validate the data
-//   // let form_data = {
-//   //   username: this.state.name,
-//   //   email: this.state.email,
-//   //   password: this.state.password, 
-//   // }
-
-//   // const isValid = await regSchema.isValid(form_data);
-//   // if(isValid){
- 
-  
-//   // }else{
-
-//   // }
-
-// }
-
-
-
 export function Register(props){
 
-// ----------------------- Required function and other stuf ---------------------------------- //
-  // import init values
+// ----------------------- Required functions and other stuff ---------------------------------- //
+
+// Initial values
 const intitialValues = {
   username : '',
   email : '',
   password : '',
 }
+
 // onsubmit
 const onSubmit = async (values) => {
-  // console.log('form data : ', values);
-   //make user object
+  // make user object.
   const  userdata = {
     name: values.username,
     email: values.email,
     password: values.password,
   }
-  // register data
+  // register user.
   props.setDataGlobal(userdata);
   props.changeState();
   props.userRegistring(true);
 }
-// ---------------------------------------------------------------------------- //
-  // const [name, setname] = useState("");
-  // const [email, setnemail] = useState("");
-  // const [password, setpassword] = useState("");
 
+// ----------------------------------------------------------------------------------------------- //
   return(
     <>
       
@@ -111,31 +87,3 @@ const onSubmit = async (values) => {
 
 
 }
-
-//  default Register;
-
-// export class Register extends React.Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-//       name: "",
-//       email: "",
-//       password: ""
-//     }
-    
-//   }
-
-  
-
-
-//   render() {
-
-//     return (
-
-      
-//     );
-//   }
-// }
-
-//onClick = {this.saveUserTOSTore()}

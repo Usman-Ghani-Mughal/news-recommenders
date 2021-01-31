@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import virus from "../../Images/virus-icon.png";
-// import "../../componentscss/card.css";
+
 import LoadingAnimation from "../loadingAnimation/LoadingAnimation";
 
 
@@ -30,25 +30,22 @@ function CoronaBaner(props){
 
         setResponse_object(response.data);
         chnageDidGetNews(true);
-        // console.log("======== ok =========");
-
+        // Success.
       }
     }) 
       .catch((err) => { 
-        // console.log("======== Error ===========");
-        // console.log(err) 
-        
+        // Some Error
     })
   }
 
 
     useEffect(  () => {
-        // console.log("Use Effect");
+        // Get Data for Covid Banner.
         getCovidData();
     },[]);
 
-    if(didgetNews){
 
+    if(didgetNews){
         return (
             <>
                 <div className="coronavirus_banner">
@@ -118,13 +115,7 @@ function CoronaBaner(props){
           );
 
     }else{
-        // var type = "bubbles";
-        // var color = "#3E8177";
-        // var height = "5%";
-        // var width = '5%';
-        // return(
-        //     <LoadingAnimation type={type} color={color} height={height} width={width} ></LoadingAnimation>
-        // )
+        // We did not have Covid data yet.
         return(
             <>
             </>
@@ -133,6 +124,5 @@ function CoronaBaner(props){
 
     
 }
-
 
 export default CoronaBaner;

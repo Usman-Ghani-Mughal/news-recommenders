@@ -12,7 +12,7 @@ import "./componentscss/topheader.css";
 import "./componentscss/coronabaner.css";
 // import Popper from 'popper.js'
 
-// // silk
+// silk
 // import "~slick-carousel/slick/slick.css"; 
 // import "~slick-carousel/slick/slick-theme.css";
 
@@ -28,7 +28,7 @@ import NavBar from "./components/Navbar/NavBar";
 import MainFooter from "./components/Footer/MainFooter";
 import CoronaBaner from "./components/Corona/CoronaBaner";
 
-// import web pages
+// import categories pages
 import About from "./pages/About";
 import Business from "./pages/Business";
 import Contact from "./pages/Contact";
@@ -43,7 +43,7 @@ import Health from "./pages/Health";
 import LifeStyle from "./pages/LifeStyle";
 import Offbeat from "./pages/Offbeat";
 import SCITECH from "./pages/SCITECH";
-
+// import channels pages
 import Geo from "./pages/Geo";
 import Ary from "./pages/Ary";
 import Dunya from "./pages/Dunya";
@@ -51,9 +51,10 @@ import Bol from "./pages/Bol";
 import DailyTimes from "./pages/DailyTimes";
 
 
-// for accessing global store
+// For accessing global store
 import {useSelector, useDispatch} from 'react-redux'
-// import actions
+
+// import actions for Global states.
 import {gotinterests} from './actions/haveinterstAction';
 import {setIntersts} from './actions/userinterstAction';
 import {login} from "./actions/loginAction";
@@ -70,16 +71,16 @@ function App()
   //localStorage.clear();
   /*
     --------------------------------------------------------------------------------------------------------------------------------------------------------------
-                                                                      Global state
+                                                                      Global states
     --------------------------------------------------------------------------------------------------------------------------------------------------------------
   */
   // make reducers for geting values.
-  const wehaveinterst = useSelector(state => state.haveInterestsReducer);
   const userData_req = useSelector(state => state.userDataReducer);
-  const userinterest_req = useSelector(state => state.userInterestsReducer);
   const islogin = useSelector(state => state.loginReducer);
   const fromGoogle = useSelector(state => state.googleLoginReducer);
-  
+
+  // const userinterest_req = useSelector(state => state.userInterestsReducer);
+  // const wehaveinterst = useSelector(state => state.haveInterestsReducer);
 
   // make dispatch object
   const dispatch = useDispatch();
@@ -98,7 +99,7 @@ function App()
 
   /*  
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-    Init states
+                                                                        Init states
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------
   */
 
@@ -116,14 +117,16 @@ function App()
 
   /*
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                                                                       Required Function
+                                                                       Required Functions
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
   */
- // This function will send register for login user to api.
+
+ // This function will send request for login user.
  const userLogin = async (userdata) => {
-   // gether data
+   // get data
    let name = userdata.name;
    let password = userdata.password;
+
    try {
    await axios({
       method: 'post',
@@ -140,7 +143,6 @@ function App()
          'auth-token': process.env.REACT_APP_AUTH_TOKEN,
       }
     }).then( (response) =>{
-        // console.log("************ Ok ***********");
         // if response success is ok 
         if(response.data.success){
           let userLogin_info = {
@@ -158,7 +160,6 @@ function App()
           swal("News Recommender", response.data.description, "error");
         }
     }).catch(err => {
-      // console.log("************ Error ***********");
      // alert("Invalid username or password");
       swal("News Recommender", "Invalid username or password", "error");
     });
@@ -170,14 +171,9 @@ function App()
 
  }
 
- // This function Logout the user
-//  const userLogout = () =>{
-//   dispatch(login(false));
-//   localStorage.clear();
-//  }
-// This function will reguster user into db using api.
+// This function will register user.
  const registerUsertoDB = async () => {
-  // gether all user data
+  // get all user data
   let userintersts_array = localStorage.getItem("userinterstsarray");
   localStorage.removeItem("userinterstsarray");
 
@@ -209,35 +205,34 @@ function App()
         // alert('User is register succesfully');
         swal("News Recommender", "Welcome: "+ username_req +"\nYou are register successfully", "success");
       }else{
-
         // alert(response.data.description);
         swal("News Recommender", response.data.description, "error");
         localStorage.clear();
       }
     }).catch(err =>{
-      // console.log(err);
       // alert(err);
       swal("News Recommender", err, "error");
       localStorage.clear();
     });
     
   } catch (err) {
-    // console.log(err);
     // alert(err);
     swal("News Recommender", err, "error");
     localStorage.clear();
   }
 }
-
+// This function is used for regster user using google.
 const google_login_register = async () => {
+  // Get data.
   let username_req = userData_req.name;
   let password_req = userData_req.password;
   const  userdata = {
     name: username_req,
     password: password_req,
   }
+  // Register user.
   await registerUsertoDB();
-  // console.log(userdata);
+  // Login user.
   await userLogin(userdata);
 }
 
@@ -258,7 +253,7 @@ const interestSubmited = () => {
     }
   }
 
-// This method is used when we want to add category into UIarray.
+// This function is used when we want to add category into UIarray.
 const addCategories = (category) => {
       var temp = categories.UIarray;
       temp.push(category);
@@ -292,43 +287,39 @@ const userRegistring = (decision) => {
         reg: decision
       });
    }
+
 // set user information to global states.
 const setDataGlobal = async (userdata) => {
-    //  console.log("setglobal state");
-    //  console.log(userdata);
       if(userdata){
-        // console.log(userdata)
         dispatch(setUserData(userdata) );
       }
-
    }
 
 // set user is registring using goole.
 const registeringFromGoogle =  async (decision) => {
-  // console.log("registering from google called");
   await dispatch(googlelogin(decision));
-  // console.log("registering from google called done");
 }
-   // ============================================================  ======================================================================   //
-   /*
-      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                                                                            Bussines Logic from  here   
-      ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 
-      1-> Check if user is Login or not ?
-          -> if user is not login then.
-             -> Then show Login Page.  -> Or go to Register page and then select interests and then come to login
-          -> if user is login then.
-            -> Then move to home page. ->
-      2-> 
-   */
-  let checkuserlogin = localStorage.getItem('userlogin');
+
+/*
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                        Bussines Logic from  here   
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+  1-> Check if user is Login or not ?
+      -> if user is not login then.
+          -> Then show Login Page.  -> Or go to Register page and then select interests and then come to login
+      -> if user is login then.
+        -> Then move to home page. ->
+  2-> 
+*/
   
-
-
+  // let checkuserlogin = localStorage.getItem('userlogin');
+  // let udata = localStorage.getItem('userloginInfo');
+  // udata = JSON.parse(udata);
+  
   if(islogin){
-    // let udata = localStorage.getItem('userloginInfo');
-    // udata = JSON.parse(udata);
+    
     return(
       <>
         <TopHeader></TopHeader>
@@ -354,7 +345,6 @@ const registeringFromGoogle =  async (decision) => {
           <Route exact path="/bol" component= {Bol}></Route>
           <Route exact path="/dailytimes" component= {DailyTimes}></Route>
 
-          {/* <Route exact path="/entertainment" component= {Entertainment}></Route> */}
           <Route exact path="/about" component= {About}></Route>
           <Route exact path="/contact" component= {Contact}></Route>
           {/* <Redirect to="/"></Redirect> */}
@@ -379,5 +369,4 @@ const registeringFromGoogle =  async (decision) => {
 
 }
 
-
-  export default App;
+export default App;

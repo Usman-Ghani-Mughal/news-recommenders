@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import logo from '../../Images/logo7.jpeg';
 
-// for accessing global store
-
+// For accessing global store
 import {useDispatch} from 'react-redux'
 import {login} from "../../actions/loginAction";
-// import { Link } from "react-router-dom";
-
 
 function TopHeader(props){
     
@@ -101,6 +98,5 @@ function TopHeader(props){
         </header>
       );
 }
-
 
 export default TopHeader;

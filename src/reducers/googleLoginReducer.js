@@ -1,6 +1,4 @@
 
-
-
 const googleLoginReducer = (state = false, action) =>{
     switch(action.type){
         case 'googlelogin':

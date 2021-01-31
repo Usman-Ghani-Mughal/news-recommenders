@@ -6,7 +6,6 @@ import about_image from "../Images/contact.png";
 
 function About(props) {
 
-
   return (
     <>
       <div className="container">

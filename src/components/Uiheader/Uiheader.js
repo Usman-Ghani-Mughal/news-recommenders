@@ -4,32 +4,22 @@ import logo_img from "../../Images/logo7.jpeg";
 
 
 function Uiheader(props){
-    // console.log("uiheader start");
-    
-    // console.log("ui header : ");
-    // console.log(props.fromGoogle);
-
 
     const submitInterest_registeruser = async () => {
-        // console.log("ui header : in function");
-        // console.log(props.fromGoogle);
         if(props.fromGoogle){
+            // From Google.
             await props.interestSubmited();
             // Register and Login here.
             props.google_login_register();
             props.userRegistring(false);
             props.registeringFromGoogle(false);
         }else{
+            // From Local
             await props.interestSubmited();
             props.registerUsertoDB();
             props.userRegistring(false);
-            // console.log("In else from google is not update");
         }
-        
 
-
-
-       
     }
 
 
@@ -38,7 +28,6 @@ function Uiheader(props){
             <div className='row'>
                 <div className='col-md-3'>
                     <img src={logo_img} className="logo_img"></img>
-                    {/* <h1 className="logo">Logo</h1> */}
                 </div>
                 <div className='col-md-7 info-class'>
                     <h3>Please select your 3 interests</h3>

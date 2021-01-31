@@ -40,33 +40,18 @@ function Ary(props) {
         // store data in local
         localStorage.setItem("Ary_news", JSON.stringify(news_array));
         chnageDidGetNews(true);
-        // console.log("========= got data ==========");
+
+        // Got data.
 
       }
     }) 
       .catch((err) => { 
-        // console.log("======== Error ===========");
         // console.log(err) 
     })
-    // console.log("done latest");
   }
 
   useEffect(  () => {
       getAryNews();
-    // let latestnews_t = localStorage.getItem("latest_news");
-
-    // if(latestnews_t){
-    //   latestnews_t = JSON.parse(latestnews_t);
-    //   console.log(latestnews_t);
-    //   setNewsArray(latestnews_t);
-    //   // chnageDidGetNews(true);
-    //   console.log("Use Effect if block");
-    // }
-    // else{
-    //   console.log("Use Effect else block");
-    //   getLatestNews();
-    // }
-    
   },[]);
 
   setInterval(getAryNews, 3600000);

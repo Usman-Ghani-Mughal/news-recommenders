@@ -1,6 +1,4 @@
 
-
-
 const haveInterestsReducer = (state = false, action) =>{
     switch(action.type){
         case 'gotinterests':

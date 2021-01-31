@@ -1,10 +1,9 @@
 import React from 'react'
-// , {useState}
 import '../../componentscss/user_i.css';
+
 // Import Images
 import pak_img from '../../Images/pakistan.jpg'
 import acident_img from '../../Images/Acident.jpeg'
-//import amazing_img from '../../Images/amazing.jpg'
 import blog_img from '../../Images/blog.jpg'
 import buissness_img from '../../Images/buissness.jpg'
 import coruption_img from '../../Images/coruption.jpg'
@@ -19,11 +18,7 @@ import sports_img from '../../Images/sports.jpg'
 import technology_img from '../../Images/technology.jpg'
 import world_img from '../../Images/world.jpeg'
 
-//import image_ from '../../Images/6.jpg'
-//this.state = {
- // categories : ['PAKISTAN', 'WORLD', 'BUSINESS', 'SPORTS', 'ENTERTAINMENT', 'HEALTH', 'AMAZING', 'SCI & TECH', 'OFFBEAT', 'LIFESTYLE', 'BLOGS','SPECIAL', 'ACCIDENTS',
- // 'CRIME AND CORRUPTION', 'COURTS AND CASES','TECHNOLOGY']
-//}
+
 class Getuserintersts extends React.Component{
 
     constructor(props){
@@ -45,8 +40,8 @@ class Getuserintersts extends React.Component{
             sciselected: false,
             caseselected: false,
             crimeselected: false,
-            // slectedcount:0
         }
+
         this.slectedcount = 0;
         // Binding all methods with states
         this.pakistanchnageState = this.pakistanchnageState.bind(this);
@@ -98,12 +93,14 @@ class Getuserintersts extends React.Component{
 
     // Click function
     getSelected  = (name) =>{
-        
+
+        // True when selected Interests are less then 3.
         if (this.slectedcount<3)
-        {
+        { 
             if(name==="PAKISTAN"){
                 if (this.state.pakistanselected)
                 {
+                    // Removing Category from selected
                     this.countDecrement();
                     this.pakistanchnageState();
                     this.props.removeCategories(name);
@@ -111,6 +108,7 @@ class Getuserintersts extends React.Component{
                 }
                 else
                 {
+                    // Adding Category in selected
                     this.countIncrement();
                     this.pakistanchnageState();
                     this.props.addCategories(name);
@@ -307,10 +305,13 @@ class Getuserintersts extends React.Component{
         }
         else
         {
+            // User selected 3 Interests.
+
             var flag = true;
             if(name==="PAKISTAN"){
                 if (this.state.pakistanselected)
                 {
+                    // Remove interest from Selected.
                     this.countDecrement();
                     this.pakistanchnageState();
                     this.props.removeCategories(name);
@@ -446,9 +447,6 @@ class Getuserintersts extends React.Component{
 
     render(){
 
-        // if(this.state.slectedcount === 3){
-        //     this.props.allowSubmit(false);
-        // }
         return (
             <div className="container-fluid mb-5">
                 {/* First Row*/}
@@ -526,7 +524,7 @@ class Getuserintersts extends React.Component{
                     </div>
     
                 </div>
-    
+                
                 {/* 3 Row*/}
                 <div className="row">
     

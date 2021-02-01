@@ -21,7 +21,7 @@ function DailyTimes(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getDailytimesNews = async () =>{
     // console.log("grt latest");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/news/channels', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/newschannels/channel', { 
         params: { channel: 'Daily Times' },    
         headers:{
             'Accept': 'application/json',

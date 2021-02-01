@@ -22,7 +22,7 @@ function Offbeat(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getOffbeatNews = async () =>{
     // console.log("grt latest");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/offbeat', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/categories/offbeat', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',

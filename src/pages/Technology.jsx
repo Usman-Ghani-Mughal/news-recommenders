@@ -21,7 +21,7 @@ function Technology(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getTechnologyNews = async () =>{
 
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/technology', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/categories/technology', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',

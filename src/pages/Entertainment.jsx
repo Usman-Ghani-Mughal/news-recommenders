@@ -21,7 +21,7 @@ function Entertainment(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getEntertainmentNews = async () =>{
     // console.log("grt latest");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/entertainment', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/categories/entertainment', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',

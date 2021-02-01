@@ -22,7 +22,7 @@ function Sports(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getSportstNews = async () =>{
     // console.log("grt sports");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/sports', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/categories/sports', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',

@@ -94,7 +94,7 @@ export class Login extends React.Component {
 
   googleNotSuccess = (response) => {
     // Some Error From google
-    swal("News Recommender", "Some Error from Google.", "error");
+    // swal("News Recommender", "Some Error from Google.", "error");
   }
 
   render() {

@@ -15,7 +15,7 @@ function CoronaBaner(props){
     // Similar to componentDidMount and componentDidUpdate:
   const  getCovidData = async () =>{
 
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/corona', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/categories/corona', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',

@@ -22,7 +22,7 @@ function Geo(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getGeoNews = async () =>{
     // console.log("grt latest");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/news/channels', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/newschannels/channel', { 
         params: { channel: 'Geo' },    
         headers:{
             'Accept': 'application/json',

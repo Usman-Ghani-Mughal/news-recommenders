@@ -22,7 +22,7 @@ function Health(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getHealthNews = async () =>{
     // console.log("grt latest");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/health', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/categories/health', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',

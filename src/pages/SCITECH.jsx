@@ -21,7 +21,7 @@ function SCITECH(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getSCITECHNews = async () =>{
     // console.log("grt latest");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/scitech', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/categories/scitech', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',

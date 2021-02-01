@@ -21,7 +21,7 @@ function LifeStyle(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getLifeStyleNews = async () =>{
     // console.log("grt latest");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/lifestyle', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/categories/lifestyle', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',

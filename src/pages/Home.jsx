@@ -54,7 +54,7 @@ function Home(props) {
   const  getRecomendedNews = async () =>{
     
     // console.log("grt home");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/python/userrecommendednews', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/userrecommendednews', { 
         params: { userinterests: udata.userinterests, name:  user_name_l},
         headers:{
           'Accept': 'application/json',

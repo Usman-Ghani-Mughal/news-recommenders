@@ -2,7 +2,6 @@ import React from 'react'
 import '../../componentscss/uiheader.css'
 import logo_img from "../../Images/logo7.jpeg";
 
-
 function Uiheader(props){
 
     const submitInterest_registeruser = async () => {

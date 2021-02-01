@@ -325,6 +325,7 @@ const registeringFromGoogle =  async (decision) => {
         <TopHeader></TopHeader>
         <NavBar></NavBar>
         <CoronaBaner></CoronaBaner>
+
         <Switch>
           <Route exact path="/" component= {Home}></Route>
           <Route exact path="/latestnews" component= {LatestNews}></Route>
@@ -349,6 +350,7 @@ const registeringFromGoogle =  async (decision) => {
           <Route exact path="/contact" component= {Contact}></Route>
           {/* <Redirect to="/"></Redirect> */}
         </Switch>
+        
         <MainFooter></MainFooter>
       </>
     )

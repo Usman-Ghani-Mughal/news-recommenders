@@ -21,7 +21,7 @@ function Business(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getBusinessNews = async () =>{
 
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/business', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/categories/business', { 
         headers:{
           'Accept': 'application/json',
             'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ function Ary(props) {
   // Similar to componentDidMount and componentDidUpdate:
   const  getAryNews = async () =>{
     // console.log("grt latest");
-    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/news/channels', { 
+    const reqt = await axios.get('https://damp-brushlands-70035.herokuapp.com/newsapi/newschannels/channel', { 
         params: { channel: 'ARY' },    
         headers:{
             'Accept': 'application/json',

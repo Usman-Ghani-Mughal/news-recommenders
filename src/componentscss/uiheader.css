@@ -91,7 +91,45 @@
 
 
 
+@media screen and  (max-width: 1280px) {
+    .info-class{
+        padding-left: 15%;
+    }
 
+  }
+
+
+  @media screen and  (max-width: 1080px) {
+    .info-class h3{
+        padding-left: 15%;
+        font-size: 1em !important;
+    }
+
+  }
+
+
+  @media screen and  (max-width: 950px) {
+    .info-class h3{
+        padding-left: 30%;
+        font-size: 12 !important;
+    }
+
+  }
+
+  @media screen and  (max-width: 815px) {
+    .info-class h3{
+        padding-left: 40%;
+        font-size: 14px !important;
+    }
+
+  }
+  @media screen and  (max-width: 750px) {
+    .info-class h3{
+        padding-left: 0% !important;
+        font-size: 14px !important;
+    }
+
+  }
 
 
 

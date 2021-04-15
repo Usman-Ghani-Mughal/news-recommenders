@@ -25,8 +25,8 @@ function CoronaBaner(props){
         } 
     }).then( async (response) => { 
       if(response.status === 200){
-
-          setCovidData(response.data.covidData[0]);
+          
+          setCovidData(response.data.covidData);
 
         setResponse_object(response.data);
         chnageDidGetNews(true);
